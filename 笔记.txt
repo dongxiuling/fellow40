@@ -7,7 +7,6 @@
 提交
 push 
 
-
 git bash 打开  命令行输入 用户名密码 
 git    config    --global   user.name    "自己的git用户名" 
 git    config   --global   user.email      "自己的git邮箱
