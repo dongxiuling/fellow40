@@ -1,10 +1,10 @@
 /* id选择器  一个页面中id唯一 */
-#div1{
+/* #div1{
     width: 200px;
     height: 200px;
     background: #ff0000;
     color: aqua;
-}
+} */
 /* 标签选择器  */
 /* li{
    width: 200px;
@@ -25,13 +25,52 @@
 } */
 
 /* 子代选择器 （亲儿子）*/
-#ul1 > .aa{
+/* #ul1 > .aa{
     background: aqua;
-}
+} */
 /* 伪类选择器  */
-a:hover{
+/* a:hover{
     background: blueviolet;
     color:#ff0000;
+} */
+
+/* 群组选择器 分组选择器 */
+/* #ul1 > .aa,#div1{
+    background: #ff0000;
+} */
+/* 相邻兄弟选择器 */
+/* .bb+li{
+   color: #ff0000; 
+} */
+
+
+
+#link {  
+    color: red;
 }
 
+#link:hover{  
+    color: green;
+}
+/* a{
+    color:red;
+}
+a{
+    color: green;
+} */
 
+/* css选择器优先级 从大到小
+    style内联  1000
+    id         100
+    class 伪类  10
+    标签        1
+
+*/
+/* 11个class  */
+/* .div1 .div2 .div3 .div4  ....div11 {
+    background: red;
+} */
+/* id */
+/* #div{
+
+} */
