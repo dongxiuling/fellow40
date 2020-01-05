@@ -25,21 +25,44 @@
     </div> -->
     <!-- 
         css选择器 
-        id选择器 
-        标签选择器
-        class类选择器
-        .a,.b 群组选择器
-        .a .b后代选择器
-        .a > .b子代选择器 
-        :hover 伪类选择器 
+            id选择器 
+            标签选择器
+            class类选择器
+            .a,.b 群组选择器
+            .a .b后代选择器
+            .a > .b子代选择器 
+            :hover 伪类选择器 
 
         选择器优先级 
         style(内联样式) 1000
         id选择器   100
         class类 伪类 10
-        标签选择器  1
+        标签选择器  1        
      -->
-    <div id="div2">
+
+     <style>
+         /* #ul1 .aa{
+
+         }
+         #ul1 > .aa{
+
+        }
+        #ul1 + ul{
+            
+        } */
+
+        /* .aa:hover{
+            background: red;
+        } */
+        /* #ul1 .aa{  
+            color:red;
+        }
+        .aa:hover{ 
+            color:green;
+        } */
+     
+     </style>
+    <div id="div2" >
         哈哈
     </div>
     <div id="div1">
@@ -64,7 +87,6 @@
         <li class="aa">222</li>
     </ul>
     <a id="link" href="http://www.baidu.com">百度</a>
-
 
     <ul>
         <li class="bb">1</li>
