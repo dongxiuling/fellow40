@@ -1,0 +1,9 @@
+.banner{
+    background: #fe0036;
+}
+.banner img{
+    width: 990px;
+    height: 80px;
+    margin:0 auto;
+    display: block;
+}

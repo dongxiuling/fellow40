@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            /* overflow: hidden; */
+            height:22px;
+        }
+        li{
+            background: #ff0000;
+            /* 
+            float ：left |right  脱离文档流 空间释放 
+            导致 父元素塌陷
+            解决办法：
+                1 父元素ul添加overflow:hidden;
+                2 父元素添加高度
+            */
+            float: left;
+            /* margin-right:10px; */
+            padding-right:10px;
+        }
+        h3{
+            height: 50px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <h3></h3>
+    
+</body>
+</html>
