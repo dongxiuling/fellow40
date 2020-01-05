@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 500px;
+            height: 500px;
+            background: #eeeeee;
+            /* margin:50px; */
+
+            position: relative;
+            left:50px;
+            top:50px;
+        }
+        #div2{
+            width: 100px;
+            height: 50px;
+            background: #ff0000;
+            float: left;
+        }
+        #div3{
+            width: 100px;
+            height: 50px;
+            background: #0f0;
+            float: left;
+            /* 绝对定位 
+
+                relative相对定位  1 相对于自己初始位置
+                                 2 定位后空间不释放
+                absolute绝对定位    1如果有最近已定位的祖先元素相对于最近已定位的祖先元素， 如果没有 相对于body  
+                             2定位后空间释放
+                fixed 固定定位 1相对于文档可视区
+                            2 定位后空间释放
+                static 默认值 
+             */
+            /* position: relative;
+            left:200px;
+            top:100px; */
+            
+            position: absolute;
+            left:50px;
+            top:30px;
+
+        }
+        #div4{
+            width: 100px;
+            height: 50px;
+            background: #00f;
+            float: left;
+
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="div2">div2</div>
+        <div id="div3">div3</div>
+        <div id="div4">div4</div>
+    </div>
+</body>
+</html>
