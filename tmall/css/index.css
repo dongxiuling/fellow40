@@ -39,13 +39,16 @@
     position: relative;
     cursor: pointer;
 }
+/* lihover的时候 自己的背景变色 */
 .header-info .main-menu:hover{
     background: #fff;
     border:1px solid #f2f2f2;
 }
+/* lihover的时候 里边的a元素文字变色 */
 .header-info .main-menu:hover > a{
     color: #ff0036;
 }
+/* lihover的时候 里边箭头旋转180度 */
 .header-info .main-menu:hover .arrow{
     transform: rotate(180deg);
 }
