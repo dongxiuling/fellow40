@@ -49,8 +49,6 @@
 .header-info .main-menu:hover .arrow{
     transform: rotate(180deg);
 }
-
-
 .header-info > li > a{
     color:#fff;
     /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
