@@ -14,10 +14,7 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 }
-.wrapper{
-    width: 1230px;
-    margin:0 auto;
-}
+
 .header-login{
     float: left;
 }
@@ -116,7 +113,47 @@
     /* color: #fe0036; */
     font-weight: 700;
 }
-.menu-hover:hover a,.menu-hover:hover span{
+.menu-hover:hover a{
     color: #ffe013;
+    text-decoration: none;
 }
 /* header info结束 */
+/* search开始 */
+.logo{
+    float: left;
+    position: relative;
+    left:-45px;
+    top:6px;
+}
+.search{
+    float: left;
+    margin-left:30px;
+    width: 625px;
+    height: 40px;
+    border:2px solid #ff0036;
+    margin-top:40px;
+}
+.search input{
+    width: 491px;
+    height: 30px;
+    border:none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    float: left;
+}
+.search button{
+    width: 124px;
+    height: 40px;
+    background: #ff0036;
+    text-align: center;
+    line-height: 40px;
+    border:none;
+    color: #fff;
+    font-size: 18px;
+    float: left;
+    font-weight: 700;
+    /* 字符之间空隙 */
+    letter-spacing: 5px;
+}
+/* search结束 */

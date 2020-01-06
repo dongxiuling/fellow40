@@ -24,3 +24,7 @@ body{
     display: block;
     clear:both;
 }
+.wrapper{
+    width: 1230px;
+    margin:0 auto;
+}
