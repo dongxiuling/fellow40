@@ -10,7 +10,7 @@
 .header{
     height:41px;
     /* border-bottom:1px solid #e5e5e5; */
-    background:#f63a00  ; 
+    background:#d91e1c  ; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 }
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 .header-info .main-menu{
-    border:1px solid #f63a00;
+    border:1px solid #d91e1c;
 }
 
 /* lihover的时候 自己的背景变色 */
@@ -157,3 +157,25 @@
     letter-spacing: 5px;
 }
 /* search结束 */
+/* nav开始 */
+
+.nav li{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+}
+.nav li:first-child{
+    margin-left:200px;
+}
+.nav img{
+    width: 100px;
+    height: 30px;
+    margin-top: 2px;
+}
+.nav a{
+    color:#333;
+    font-size: 16px;
+    padding: 0 8px;
+    font-weight: bold;
+}
+/* nav结束 */
