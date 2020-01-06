@@ -31,7 +31,7 @@
 }
 
 /* header info开始 */
-.header-info > li{
+.header-info > li{ 
     float: left;
     /* background: green;
     border:1px solid #000; */
@@ -39,6 +39,18 @@
     position: relative;
     cursor: pointer;
 }
+.header-info .main-menu:hover{
+    background: #fff;
+    border:1px solid #f2f2f2;
+}
+.header-info .main-menu:hover > a{
+    color: #ff0036;
+}
+.header-info .main-menu:hover .arrow{
+    transform: rotate(180deg);
+}
+
+
 .header-info > li > a{
     color:#fff;
     /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
@@ -52,5 +64,7 @@
     position: absolute;
     right:5px;
     top:16px;
+    transition: transform 0.3s ease;
+    transform-origin: 50% 25%;
 }
 /* header info结束 */

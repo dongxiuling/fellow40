@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background: #ff0000;
+            margin:100px auto;
+            /* css3 新语法    */
+            /* transform: rotate(-180deg) ; */
+
+            /* 过度  属性 时间 ease 延迟时间*/
+            transition:transform 0.6s ease ;
+            /* 水平 垂直  */
+            transform-origin: 100% 0% ;
+        }
+        div:hover{
+            transform: rotate(-180deg) ;
+            /* 位移 */
+            /* transform: translateY(100px); */
+            /* 缩放 */
+            /* transform:scale(2); */
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div>123</div>
+    
+</body>
+</html>
