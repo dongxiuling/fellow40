@@ -19,3 +19,8 @@ body{
     /* 去锯齿渲染 这个属性也是更清晰的作用*/
     -webkit-font-smoothing: antialiased;
 }
+.clearfix::after{
+    content:"";
+    display: block;
+    clear:both;
+}
