@@ -17,11 +17,11 @@
         /* .clear{
             clear:both;
         } */
-
         /* 伪元素  #parent的内部的后边添加一个伪元素 */
         .clearfix::after{
             content:"";
             display: block;
+            /* 清除浮动 left|right|both */
             clear:both;
         }
         .aa{
