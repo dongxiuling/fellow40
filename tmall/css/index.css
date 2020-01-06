@@ -107,4 +107,16 @@
 .header-info .sub-menu li:hover a{
     color: #ff0036;
 }
+/* 修改字体图标大小 */
+.header-shouji{
+    font-size: 12px;
+}
+.icon-gouwuche{
+    font-size: 14px;
+    /* color: #fe0036; */
+    font-weight: 700;
+}
+.menu-hover:hover a,.menu-hover:hover span{
+    color: #ffe013;
+}
 /* header info结束 */
