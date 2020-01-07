@@ -196,9 +196,13 @@ body{
     position: absolute;
     left:0px;
     top:-35px;
+    height:535px;
+    background: rgba(0,0,0,.55);
 }
 .slider-box{
     background: #0000ff;
+    height: 500px;
+    overflow: hidden;
 }
 .slider-box img{
     width: 1230px;
@@ -212,12 +216,13 @@ body{
     font-weight: normal;
     padding-left:20px;
 }
-.cate-content{
+/* .cate-content{
     background: rgba(0,0,0,.55);
-}
+} */
 .cate-content > li{
     height: 31px;
     line-height: 31px;
+    cursor: pointer;
 }
 
 .cata-list > a{
@@ -236,7 +241,84 @@ body{
 .cata-list:hover{
     background: #fff;
 }
-.cata-list:hover > a,.cata-list:hover > span{
+.cate-nvzhuang:hover > a,.cate-nvzhuang:hover > span{
     color: #e54077;
+}
+.cate-nanzhuang:hover > a,.cate-nanzhuang:hover > span{
+    color: #ffe013;
+}
+
+.cate-content{
+    position: relative;
+}
+.sub-category{
+    background: #fff;
+    position: absolute;
+    left:200px;
+    top:0px;
+    height: 500px;
+    width:852px;
+    /* display: none; */
+}
+.cata-list:hover  .sub-category{
+    display: block;
+}
+.cate-left{
+    width: 644px;
+    float: left;
+    /* background: #ff0000; */
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+.cate-right{
+    width:208px;
+    float:right;
+    background: #00ff00;
+}
+.cate-left-title{
+    width: 104px;
+    float: left;
+    color:#333;
+    font-size: 14px;
+    font-weight: 700;
+
+
+}
+.cate-left-content{
+    width:500px;
+    float: left;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 7px;
+}
+.cate-left-content a{
+    color:#666;
+    font-size: 14px;
+    margin-left:13px;
+    line-height: 22px;
+    height:22px;
+    float: left;
+}
+.cate-row{
+    margin: 10px 0;
+  
+}
+.cate-right{
+    background: #eee;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.cate-right-content{
+    background: #ffffff;
+}
+.cate-right-content a{
+    width: 50%;
+    float: left;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    box-sizing: border-box;
+}
+.cate-right-content img{
+    width:100%;
+    display: block;
 }
 /* 轮播图结束 */
