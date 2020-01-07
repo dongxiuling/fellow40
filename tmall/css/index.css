@@ -179,3 +179,29 @@
     font-weight: bold;
 }
 /* nav结束 */
+/* 轮播图开始 */
+body{
+    background: url(../images/bg.png) center 83px no-repeat;
+}
+.slider{
+    height: 300px;
+    background: #eeeeee;
+    position: relative;
+}
+.category{
+    width: 200px;
+    background: green;
+    /* 浮动半脱离文档流   */
+    /* float: left; */
+    /* 全脱离文档流 */
+    position: absolute;
+    left:0px;
+    top:-35px;
+}
+.slider-box{
+    background: #0000ff;
+}
+.slider-box img{
+    width: 1230px;
+}
+/* 轮播图结束 */

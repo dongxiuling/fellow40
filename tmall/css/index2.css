@@ -1,0 +1,66 @@
+.header{
+    background: #ff0000;
+    height: 40px;
+}
+.header-login{
+    float: left;
+    line-height: 32px;
+    color: #fff;
+}
+.header-login a{
+    color:#fff;
+    margin-left:20px;
+}
+.header-login a,.header-login span{
+    float: left;
+}
+.header-info{
+    float:right;
+}
+.header-info > li{
+    float: left;
+    padding: 0 14px 0 10px;
+}
+.header-info > li >a{
+    color:#fff;
+    line-height: 32px;
+}
+.header-info > .main-menu{
+    border: 1px solid #f00;
+    cursor: pointer;
+}
+.header-info > .main-menu:hover{
+    background: #fff;
+    border: 1px solid #000;
+}
+.header-info > .main-menu:hover > a{
+    color:#ff0036;
+}
+.header-info > .main-menu:hover .sub-menu{
+    display: block;
+}
+.header-info .main-menu{
+    position: relative;
+}
+.header-info .sub-menu{
+    position: absolute;
+    left:-1px;
+    top:32px;
+    background: #ffffff;
+    padding:10px;
+    width:73px;
+    border:1px solid #000;
+    display: none;
+}
+.header-info .main-menu:hover::after{
+    content: "";
+    position: absolute;
+    left:0;
+    top:32px;
+    width:100%;
+    height:1px;
+    background: #fff;
+}
+
+
+
