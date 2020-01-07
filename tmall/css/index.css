@@ -190,7 +190,6 @@ body{
 }
 .category{
     width: 200px;
-    background: green;
     /* 浮动半脱离文档流   */
     /* float: left; */
     /* 全脱离文档流 */
@@ -203,5 +202,41 @@ body{
 }
 .slider-box img{
     width: 1230px;
+}
+.cate-title{
+    background: #eee;
+    color:#DD2727;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left:20px;
+}
+.cate-content{
+    background: rgba(0,0,0,.55);
+}
+.cate-content > li{
+    height: 31px;
+    line-height: 31px;
+}
+
+.cata-list > a{
+    color:#fff;
+    font-size: 14px;
+}
+.cata-list > a:hover{
+    text-decoration: none;
+}
+.cata-list > span{
+    /* color: rgba(255,255,255,0.5) */
+    color: #fff;
+    opacity: 0.5;
+    margin:0 10px 0 20px;
+}
+.cata-list:hover{
+    background: #fff;
+}
+.cata-list:hover > a,.cata-list:hover > span{
+    color: #e54077;
 }
 /* 轮播图结束 */
