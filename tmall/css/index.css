@@ -247,7 +247,6 @@ body{
 .cate-nanzhuang:hover > a,.cate-nanzhuang:hover > span{
     color: #ffe013;
 }
-
 .cate-content{
     position: relative;
 }
@@ -281,8 +280,6 @@ body{
     color:#333;
     font-size: 14px;
     font-weight: 700;
-
-
 }
 .cate-left-content{
     width:500px;
@@ -300,7 +297,6 @@ body{
 }
 .cate-row{
     margin: 10px 0;
-  
 }
 .cate-right{
     background: #eee;
