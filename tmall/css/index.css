@@ -397,8 +397,13 @@ body{
 }
 .brand-list{
     width: 234px;
-    height:316px;
+    height:376px;
     background: #ffffff;
+    float: left;
+}
+.brand-list1{
+    width: 485px;
+    margin-left:13px;
 }
 .brand-list-title{
     height: 54px;
@@ -413,10 +418,59 @@ body{
     float: right;
     color: #9b9b9b;
     font-size: 18px;
+    margin-right:15px;
 }
 .brand-list-content img{
     width: 100%;
 }
 .brand-list-content img:hover{
     opacity: 0.8;
+}
+/* 品牌墙 */
+.brand-wall-box{
+    margin-top:20px;
+}
+.brand-wall-list{
+    width: 122px;
+    height: 108px;
+    /* line-height: 108px; */
+    background: #ffffff;
+    float: left;
+    text-align: center;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    position: relative;
+}
+.brand-wall-list img{
+    width: 100px;
+    height: 50px;
+    margin-top:29px;
+}
+.brand-wall-mask{
+    width: 122px;
+    height: 108px;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    left:0px;
+    top:0px;
+    display: none;
+}
+.mask-title{
+    color:#fff;
+    padding-top:32px;
+
+}
+.mask-btn{
+    width: 67px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    background: #ff0036;
+    border: none;
+    color: #fff;
+    margin-top:4px;
+    border-radius: 8px;
+}
+.brand-wall-list:hover .brand-wall-mask{
+    display: block;
 }
