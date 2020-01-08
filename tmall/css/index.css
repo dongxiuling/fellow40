@@ -181,7 +181,7 @@
 /* nav结束 */
 /* 轮播图开始 */
 body{
-    background: url(../images/bg.png) center 83px no-repeat;
+    background:#f5f5f5 url(../images/bg.png) center 83px no-repeat;
 }
 .slider{
     /* height: 300px; */
@@ -390,4 +390,33 @@ body{
 }
 .page-item a{
     text-decoration: none;
+}
+/* 品牌开始 */
+.brand-box{
+    margin-top:35px;
+}
+.brand-list{
+    width: 234px;
+    height:316px;
+    background: #ffffff;
+}
+.brand-list-title{
+    height: 54px;
+    line-height: 54px;
+}
+.brand-list-cn{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.icon-gengduo{
+    float: right;
+    color: #9b9b9b;
+    font-size: 18px;
+}
+.brand-list-content img{
+    width: 100%;
+}
+.brand-list-content img:hover{
+    opacity: 0.8;
 }

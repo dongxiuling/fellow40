@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        /* 
+            父元素有margin-top
+            子元素有margin-top
+            会合并为一个 值大的那个 父元素 
+            解决方式：
+            1 父元素加上overflow:hidden
+            2 父元素加边框
+            3 父元素或子元素浮动
+            4 父元素或子元素定位
+         */
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+            margin-top:100px;
+            /* overflow: hidden; */
+            /* border:1px solid transparent; */
+            /* float: left; */
+            /* position: absolute; */
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #000000;
+            /* margin:50px; */
+            margin-top:30px;
+            /* float: left; */
+            /* position: absolute; */
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+        
+    </div>
+
+</body>
+</html>
