@@ -184,7 +184,7 @@ body{
     background: url(../images/bg.png) center 83px no-repeat;
 }
 .slider{
-    height: 300px;
+    /* height: 300px; */
     background: #eeeeee;
     position: relative;
 }
@@ -200,7 +200,7 @@ body{
     background: rgba(0,0,0,.55);
 }
 .slider-box{
-    background: #0000ff;
+    /* background: #0000ff; */
     height: 500px;
     overflow: hidden;
 }
@@ -257,7 +257,7 @@ body{
     top:0px;
     height: 500px;
     width:852px;
-    /* display: none; */
+    display: none;
 }
 .cata-list:hover  .sub-category{
     display: block;
@@ -318,3 +318,46 @@ body{
     display: block;
 }
 /* 轮播图结束 */
+/* 年货节 */
+/* 行元素和行级块 可以通过设置父元素的text-align:center 居中  */
+.year-good-title{
+    display: block;
+    height: 105px;
+    text-align: center;
+}
+.year-good-title img{
+    width:300px;
+    height:65px;
+    margin-top:20px;
+}
+.year-good-list{
+    width:610px;
+    height:330px;
+    background: #ff0000;
+}
+.page-item-first{
+    text-align: center;
+    width:250px;
+    height:330px;
+    /* background: #fff8c2; */
+    background: url(../images/good-bg.png);
+    border-radius: 5px ;
+}
+.pate-item-title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff520c;
+    /* margin-top:32px; */
+    padding-top:32px;
+    /* text-align: center; */
+
+}
+.page-item-desc{
+    font-size: 18px;
+    color: #ff520c;
+    margin-bottom: 20px;
+}
+.page-item-img{
+    width:180px;
+    height:180px;
+}
