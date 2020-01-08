@@ -333,7 +333,11 @@ body{
 .year-good-list{
     width:610px;
     height:330px;
-    background: #ff0000;
+    /* background: #ff0000; */
+    float: left;
+}
+.year-good-list:first-child{
+    margin-right: 10px;
 }
 .page-item-first{
     text-align: center;
@@ -342,6 +346,8 @@ body{
     /* background: #fff8c2; */
     background: url(../images/good-bg.png);
     border-radius: 5px ;
+    float: left;
+
 }
 .pate-item-title{
     font-size: 24px;
@@ -360,4 +366,28 @@ body{
 .page-item-img{
     width:180px;
     height:180px;
+}
+.page-item-second{
+    width: 350px;
+    height: 160px;
+    background: url(../images/good-bg2.png);
+    float: left;
+    padding-left: 30px;
+    box-sizing: border-box;
+    position: relative;
+    margin-left:10px;
+    border-radius: 5px;
+}
+.page-item-second .page-item-img{
+    position: absolute;
+    right:17px;
+    top:20px;
+    width: 130px;
+    height:130px;
+}
+.page-item-second:last-child{
+    margin-top: 10px;
+}
+.page-item a{
+    text-decoration: none;
 }
