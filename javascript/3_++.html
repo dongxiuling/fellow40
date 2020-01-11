@@ -17,11 +17,30 @@
         // ++a先++ 再参与运算
         // console.log(a)
 
-        var a = 23;
-        var b = 45;
-        var c = a+b
+        // var a = 23;
+        // var b = 45;
+        // var c = a+b
 
-        console.log("a+b = "+(a+b));  
+        // console.log("a+b = "+(a+b));  
+        // +字符串拼接   -*/隐试转换  如果不能转 计算NAN
+        // var a = 10;
+        // var b = '12';
+        // var c = 'a';
+        // console.log(a+b); //1012
+        // console.log(a*b);  //123
+        // console.log(a-b);  //-2
+        // console.log(a/b);  //0.8333333333333334
+        // console.log(a*c);  //NaN not a number
+        
+
+        var b = false;
+        console.log(typeof (b+"") );  //"false"
+
+
+        var str = "";  //非空的字符串即为真
+        var x = 0;    //数值 非0即为真     非0的数字 非空的字符串
+
+        console.log(!!x);
     </script>
     
 </body>
