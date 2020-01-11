@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var x = 100;
+        console.log(x)   ;
+        // 作用域 全局作用域  函数作用域
+        function f1(){
+            console.log(x);
+            var y = 200;
+            z = 300; //定义变量 不加var 全局变量
+        }
+        f1();
+
+        
+        // console.log(z);
+        
+        
+        
+    </script>
+</body>
+</html>
