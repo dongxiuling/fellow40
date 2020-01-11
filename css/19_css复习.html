@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        id选择器
+        class选择器
+        伪类选择器:hover
+        伪元素::after
+        标签选择器
+        后代  .a .b 
+        子代选择器 .a > .b
+        群组 .a,.b
+        下一个兄弟  .a+.b
+
+        优先级
+        !important 
+        style 1000
+        id  100
+        class 伪类选择器 10
+        标签 伪元素 1
+
+     -->
+     <!-- :hover -->
+    <!-- 
+        background:red url(images/1.jpg) 20 30 no-repeat;
+         background-color 
+         background-image
+         background-position
+         background-repeat
+         字体
+        font-size
+        font-family
+        font-style
+        font-weight 100-900
+        color 
+        文本
+         text-align:center|left|right
+         单行文本垂直居中
+         line-height:height
+         首行缩进
+         text-indent:20px;
+         文字之间间距
+         letter-space  哈哈
+         
+        ul  list-style:none;
+
+        a  text-decoration :none
+
+        outline:none 
+
+        行级元素 块级元素 
+
+        行级元素 ：多个占一行 不能设置宽度 宽度是内容撑的 
+            span a strong em  b
+        块级元素 : 自己占一行 可以设置宽高 宽度充满父元素
+            div p h1-h6 ul li table 
+
+        框(盒)模型 
+            标准      
+                width属性 = 内容宽度 
+            怪异（ie6以及ie6以下的浏览器 不写doctype表现成怪异）
+
+                width属性 = 内容+padding+border 
+            box-sizing:border-box(怪异) content-box(标准)
+
+        float:left|right|none 脱离文档流 空时释放 
+        塌陷问题 
+            1 父元素overflow:hidden
+            2 父元素加高度
+            3 clearfix
+                .clearfix::after{
+                    content:"",
+                    dispaly:block;
+                    clear:both;
+                }
+        定位
+            relative   相对定位 
+                            相对于自己初始位置，
+                            定位后空间不释放
+            absolute   绝对定位 
+                            相对最近已定位的祖先元素，如果没有相对于body 
+                            定位后空间释放
+            fixed   固定定位  
+                    相对于文档可视区
+                    定位后空间释放
+
+            static  默认值 
+        
+
+     -->
+</body>
+</html>
