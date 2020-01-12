@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    ceil(x)	对数进行上舍入。
+    floor(x)	对数进行下舍入。
+    random()	返回 0 ~ 1 之间的随机数。 不包含1
+
+    global
+    parseInt()	解析一个字符串并返回一个整数。
+ -->
+    <script>
+        // 0-10 随机整数 
+        // var num = Math.floor( Math.random()*11 );   
+        
+        // 3-10
+        // 0-8  3-11  
+        // Math.random()*8 +3 
+        // console.log(num)
+        // var str = '123dfghjkl';
+        // console.log( parseInt(str) );
+
+
+        // 'abcdefg'  =>'gfed'
+        var str = "abcdefg";  
+        var arr = str.split("");//['a','b'....]
+        arr.reverse();
+        var str = arr.join("");
+        console.log(str);
+
+        // str.reverse();
+
+
+
+    </script>
+    
+</body>
+</html>
