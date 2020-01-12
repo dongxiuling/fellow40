@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 3.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。    
+
+    
+        // 判断是否是素数 是返回true  不是返回false
+        function isSuShu(num){
+            for(var i=2; i<num; i++){
+                if(num%i == 0){  // 9/2 不是素数
+                    return false;  
+                }
+            }
+
+            return true;
+        }
+
+        var count = 0;
+        for(var j = 100; j<=1000; j++){
+            if(isSuShu(j)){
+                count++;
+                document.write(j+",");
+
+                if(count%6 == 0){
+                    document.write('</br>');
+                }
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
