@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        //  var num  命名：数字 字母 下划线 $  并且开头不能是数字
+
+        // var num ;
+        // console.log()
+
+        // js数据类型
+        // 
+        基本数据  number string boolean 
+            undefined  1 定义变量没有赋值
+                       2 访问对象下没有的属性 obj.xx 
+                       3 数组索引越界  
+                            var arr = [1,2,3,4];
+                            arr[5]
+                       4 函数不写return  默认返回undefined
+
+            null   document.getElementById("div1"))取不到  //null 空对象
+        引用数据类型
+            array
+            object
+     -->
+     <script>
+    //    var arr = [1,2,3,4];
+    //    arr[5]
+    // function a(){
+    //     console.log('fghj;lkjhgfghj')
+    //     // return 'hahah'
+    // }
+
+    // var x = a();
+
+    // console.log(a());
+
+     
+    // var a ="123";
+    // var b = 10;
+
+    // console.log(a+b); //12310
+    
+    // +字符串拼接   -*/隐试转换  如果不能转 计算NAN
+    
+    // && || !
+    // == '1' == 1    === 值和类型 '1' === 1
+    // 函数提升
+    // f1(1,2,3) //实参
+    // function f1(a,b,c){ //形参
+    //     // console.log(a,b,c);
+    //     return a+b+c;
+    // }
+    
+
+    // console.log(f2);  //undefined()
+
+    // var f2 = function(){
+    //     var y =10;
+    // }
+    
+    // f2();
+
+    var arr = [1,2,3];
+    var ar2 = new Array(1,2,3)
+    // arr2[0] = 1;
+    // arr2[1] = 2;
+
+    // arr[0]
+
+    // arr.length
+
+    for(var i=0;i<arr.length; i++){
+        console.log(arr[i]);
+    }
+
+
+   
+
+    // obj.name = 'lisi'
+    // obj.eat()
+
+    // var obj2 = new Object();
+    // obj.name = '111';
+
+    // var obj = {
+    //     name:'zhangsan',
+    //     age:20,
+    //     eat:function(){
+    //         console.log(111)
+    //     }
+    // }
+
+    // for in 
+
+    // for(var key in obj){
+    //     console.log(obj[key])
+    // }
+
+
+    // var obj2 = obj;
+
+    // obj2.name = 'lisi';
+    // console.log(obj);
+    
+        
+    function clone(person){
+        var person2 = {};
+        for(var key in person){
+            // if(typeof person[key] == "object" ){
+            //     person2[key] = clone(person[key])
+            // }else{
+                person2[key] = person[key]; 
+            // }
+        }
+        return person2;
+    }
+    var obj = {
+        name:'zhangsan',
+        age:20,
+        father:{
+            name:'zhangXX'
+        }
+    }
+
+    var obj2 = clone(obj);
+
+    obj2.name = 'lisi'
+
+    console.log(obj);
+
+
+
+
+    
+
+
+
+     </script>
+
+</body>
+</html>
