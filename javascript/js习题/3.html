@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var x = Math.random();
+        // var y = Math.random();
+        
+        // console.log(x>y?x:y)
+
+        // 判断是否是闰年
+
+        function isLeap(year){
+            return ((year%4 == 0) && (year%100 != 0)) || (year%400 == 0);
+        }
+        
+        var date = new Date();
+        var fullyear = date.getFullYear();
+        if( isLeap(fullyear) ){
+            document.write("今年是闰年");
+        }else{
+            document.write("今年不是闰年");
+        }
+
+
+        
+    </script>
+    
+</body>
+</html>
