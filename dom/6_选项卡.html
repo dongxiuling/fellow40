@@ -59,21 +59,34 @@
         </div>
     </div>
     <script>
+
         var oBtnBox = document.getElementById("btn-box");
         var aLi = oBtnBox.getElementsByTagName("li");
+        var oContentBox = document.getElementById('content-box');
+        var aDiv = oContentBox.getElementsByTagName("div");
         // for循环会在页面一加载就执行  i++ 变成3
         for(var i=0; i<aLi.length; i++){ 
+            // 页面一加载  给所有的按钮添加一个自定义属性 索引index
+            aLi[i].index = i;  //aLi[0].index = 0  aLi[1].idnex = 1 aLi[2].idenx = 2
             aLi[i].onclick = function(){
                 // console.log(this);
                 //this 对当前对象的引用: 在点击事件中this (谁的点击事件this就是谁)
                 // 1 先把所有按钮的className = "";
                 for(var j=0; j<aLi.length; j++){
                     aLi[j].className = "";
+                    aDiv[j].className = "";
                 }
                 // 2 给点击的按钮的className =  "active";
                 this.className = "active";
+
+                console.log(this.index);
+                // 我知道你点击按钮的索引  => 跟他索引对应的div
+                aDiv[this.index].className = "selected";
+
             }
         }
+
+
         
 
         
