@@ -48,7 +48,7 @@
 <body>
     <div id="container">
         <ul id="btn-box">
-            <li class="active">事实</li>
+            <li class="active" >事实</li>
             <li>体育</li>
             <li>娱乐</li>
         </ul>
@@ -59,6 +59,21 @@
         </div>
     </div>
     <script>
+        var oBtnBox = document.getElementById("btn-box");
+        var aLi = oBtnBox.getElementsByTagName("li");
+        // for循环会在页面一加载就执行  i++ 变成3
+        for(var i=0; i<aLi.length; i++){ 
+            aLi[i].onclick = function(){
+                // console.log(this);
+                //this 对当前对象的引用: 在点击事件中this (谁的点击事件this就是谁)
+                // 1 先把所有按钮的className = "";
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = "";
+                }
+                // 2 给点击的按钮的className =  "active";
+                this.className = "active";
+            }
+        }
         
 
         
