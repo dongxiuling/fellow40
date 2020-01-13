@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DOM document object module 文档对象模型  -->
+    <div id="div1" >
+        haha
+    </div>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>11</li>
+        <li class="list">11</li>
+        <li class="list">11</li>
+    </ul>
+    <ul>
+        <li>11</li>
+        <li class="list">11</li>
+        <li class="list">11</li>
+    </ul>
+    <script>
+        var oDiv = document.getElementById('div1');
+        oDiv.onclick = function(){
+            oDiv.style.background = "red";  //内联样式
+        }
+        // 标签名
+        // var aLi = document.getElementsByTagName("li"); //数组[]
+
+        // var oBtn = document.getElementById('btn');
+        // oBtn.onclick = function(){
+        //     for(var i=0; i<aLi.length; i++){
+        //         aLi[i].style.background = "green";
+        //     }
+        // }
+
+        // className  返回所有class名为list的元素
+        var oUl = document.getElementById('ul1');
+        // getElementById 前边只能从document中查找 
+        // getElementsByClassName getElementsByTagName前边可以从某个dom元素中找
+        var aLi = oUl.getElementsByClassName("list");
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].style.background = "yellow";
+            }
+        }
+        
+
+
+
+    
+    </script>
+
+
+    
+</body>
+</html>
