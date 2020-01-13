@@ -15,8 +15,6 @@
      -->
 
     <script>
-        
-    // confirm('fghjk')
         var count = 0; //玩的总数
         var winCount = 0; //赢的次数
         function play(){
@@ -39,15 +37,15 @@
             str +=  (winCount/count*100).toFixed(2) +"%";
             return str ;
         }
+        
         // play() 如果点击确定  继续play()  取消 
-
         do{
             var result = play();
             // 输出玩的结果
             var isConfirm = confirm(result);  //confirm方法 点击确定返回true 点击取消返回false
             // console.log(isConfirm);
         }while(isConfirm);
-
+        
     </script>
 </body>
 
