@@ -8,18 +8,48 @@
 </head>
 <body style="height: 3000px;">
     <button id="btn">click</button>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3><h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+    <h3> 哈哈哈哈</h3>
+
     哈哈哈哈
     <script>
         var oBtn = document.getElementById('btn');
         // 点击事件  点击按钮 滚动条滚动
-
         oBtn.onclick = function(){
             // console.log('haha')
-            window.scrollTo(0,500);
+            //每个100ms 走20px
+            var x = 0;
+            var timer = setInterval(function(){
+                if(x == 500){
+                    clearInterval(timer);
+                }
+                x+= 20;
+                window.scrollTo(0,x);
+            }, 100);
+            // window.scrollTo(0,500);
         }
-        var x = 100;
+        // var x = 100;
 
-        
+
+
 
         
         
