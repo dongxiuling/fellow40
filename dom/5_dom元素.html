@@ -22,8 +22,13 @@
         <li class="list">11</li>
         <li class="list">11</li>
     </ul>
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
     <script>
-        var oDiv = document.getElementById('div1');
+        //  id返回dom元素 如果找不到返回null
+        //   tagName className Name 返回的时候数组 ，如果没有返回空数组
+        var oDiv = document.getElementById('div1'); //null
+        
         oDiv.onclick = function(){
             oDiv.style.background = "red";  //内联样式
         }
@@ -36,7 +41,6 @@
         //         aLi[i].style.background = "green";
         //     }
         // }
-
         // className  返回所有class名为list的元素
         var oUl = document.getElementById('ul1');
         // getElementById 前边只能从document中查找 
@@ -48,6 +52,12 @@
                 aLi[j].style.background = "yellow";
             }
         }
+
+        var aSex = document.getElementsByName("sex"); //数组
+
+
+
+
         
 
 
