@@ -17,7 +17,6 @@
             width: 750px;
             margin:50px auto;
             position: relative;
-            background: red;
         }
         .img-box li{
             display: none;
@@ -48,6 +47,23 @@
         }
         .btn-box .active{
             background: #ff0036;
+        }
+        .arrow-box{
+            position: absolute;
+            left:10px;
+            bottom:10px;
+        }
+        .arrow-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
     <!-- <script>
@@ -84,6 +100,10 @@
             <li>4</li>
             <li>5</li>
         </ul>
+        <ul class="arrow-box">
+            <li>&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
     </div>
     <script>
         
@@ -94,21 +114,34 @@
         var aBtn = btnBox.getElementsByTagName('li');
         var imgBox = document.getElementsByClassName('img-box')[0];
         var aImg = imgBox.getElementsByTagName('li');
-
+        var oNext = document.getElementById('next-btn');
+        var iNow = 0;
 
         for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
                 for(var j=0; j<aBtn.length;j++){
                     aBtn[j].className ="";
-                    // aImg[j].className ="";
+                    aImg[j].className ="";
                 }
                 this.className = "active";
-                // aImg[this.index].className = "selected";
+                aImg[this.index].className = "selected";
             }
         }
     
-    
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow > aBtn.length-1){
+                iNow = 0;
+            }
+            // 索引为iNow 的按钮红色 
+            for(var i=0; i<aBtn.length; i++){
+                aBtn[i].className = "";
+                aImg[iNow].className = "";
+            }
+            aBtn[iNow].className = "active";
+            aImg[iNow].className = "selected";
+        }
     </script>
 
 
