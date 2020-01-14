@@ -105,7 +105,7 @@
         </ul>
     </div>
     <script>
-        // var oContainer = document.getElementById('container');
+        var oContainer = document.getElementById('container');
 
         var btnBox = document.getElementsByClassName('btn-box')[0];//[]
         // btnBox[0]
@@ -156,6 +156,22 @@
             aBtn[idx].className = "active";
             aImg[idx].className = "selected";
         }
+
+        var timer = setInterval(function(){
+            oNext.onclick();
+        },2000);
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            // 局部
+            timer = setInterval(function(){
+                oNext.onclick();
+            },2000);
+        }
+
+
     </script>
 
 
