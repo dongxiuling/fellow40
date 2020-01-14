@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 750px;
+            margin:50px auto;
+            position: relative;
+            background: red;
+        }
+        .img-box li{
+            display: none;
+        }
+        .img-box img{
+            display: block;
+        }
+        .img-box .selected{
+            display: block;
+        }
+        .btn-box{
+            position: absolute;
+            right:10px;
+            bottom:10px;
+        }
+        .btn-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.5);
+            color:#fff;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer; /*鼠标滑过手状*/
+        }
+        .btn-box .active{
+            background: #ff0036;
+        }
+    </style>
+    <!-- <script>
+        window.onload = function(){ //页面中所有的资源都加载完再执行
+            var oContainer = document.getElementById("container"); //null
+            console.log(oContainer)
+        }   
+    </script> -->
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected">
+                <img src="img/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/5.jpg" alt="">
+            </li>
+
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        
+        // var oContainer = document.getElementById('container');
+
+        var btnBox = document.getElementsByClassName('btn-box')[0];//[]
+        // btnBox[0]
+        var aBtn = btnBox.getElementsByTagName('li');
+        var imgBox = document.getElementsByClassName('img-box')[0];
+        var aImg = imgBox.getElementsByTagName('li');
+
+
+        for(var i=0; i<aBtn.length; i++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+                for(var j=0; j<aBtn.length;j++){
+                    aBtn[j].className ="";
+                    // aImg[j].className ="";
+                }
+                this.className = "active";
+                // aImg[this.index].className = "selected";
+            }
+        }
+    
+    
+    </script>
+
+
+    
+
+</body>
+</html>

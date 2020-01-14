@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+
+
+        window 
+        .scrollTo()
+        scrollBy()
+        setInterval
+        setTimeout
+
+     -->
+    <script>
+    // window
+        var timer = setInterval(function(){
+
+        },1000)
+        var timer2 = setTimeout(function(){
+
+        }, 1000);
+
+        clearInterval(timer);
+
+        clearTimeout(timer2);
+
+        alert();
+        propt();
+        confirm();
+
+    // history  历史记录
+        history.back();
+        history.forward();
+        history.go(num);
+
+    // navigator  导航
+        navigator.userAgent
+
+    // location 地址栏
+
+        location.href 
+        location.hash
+        location.port
+
+    // DOM document object module 文档对象模型
+    // getElementById 前边只能在document中找
+    document.getElementById('div1');  //返回dom元素 如果没有null (空对象)
+    // 可以从某个dom元素中找
+    document.getElementsByClassName('aa');  //返回数组  如果没有返回空数组
+    document.getElementsByTagName('li');  //返回数组  如果没有返回空数组
+    document.getElementsByName('sex');   //返回数组  如果没有返回空数组
+
+
+    oDiv.onclick = function(){
+        // gfhjkjl;kl;kjhgfg
+        this//对当前对象的引用  点击是谁this就是谁
+    }
+
+    </script>
+    
+</body>
+</html>
