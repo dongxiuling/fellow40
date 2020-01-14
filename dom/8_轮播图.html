@@ -115,6 +115,7 @@
         var oNext = document.getElementById('next-btn');
         var oPrev = document.getElementById('prev-btn');
         var iNow = 0;
+        var timer ;
 
         for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i;
@@ -156,16 +157,15 @@
             aBtn[idx].className = "active";
             aImg[idx].className = "selected";
         }
-
-        var timer = setInterval(function(){
-            oNext.onclick();
-        },2000);
-
+        run();
         oContainer.onmouseover = function(){
             clearInterval(timer);
         }
         oContainer.onmouseout = function(){
-            // 局部
+            run();
+        }
+        // 开始定时器
+        function run(){
             timer = setInterval(function(){
                 oNext.onclick();
             },2000);
