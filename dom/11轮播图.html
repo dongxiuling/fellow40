@@ -23,6 +23,11 @@
         }
         .img-box{
             width:3750px;
+            position: absolute;
+            left:0px;
+            top:0px;
+            /* 过度  */
+            transition: left 1s linear;
         }
         .img-box li{
             float: left;
@@ -51,13 +56,16 @@
             font-size: 12px;
             cursor: pointer;
         }
+        .btn-box .active{
+            background: #ff0036;
+        }
     </style>
 </head>
 <body>
 
     <div id="container">
         <ul class="img-box">
-            <li class="selected">
+            <li>
                 <img src="img/1.jpg" alt="">
             </li>
             <li>
@@ -85,6 +93,31 @@
             <li id="next-btn">&gt;</li>
         </ul>
     </div>
+
+    <script>
+        var btnBox = document.getElementsByClassName("btn-box")[0];
+        var aBtn = btnBox.getElementsByTagName("li");
+        var oImgBox = document.getElementsByClassName("img-box")[0];
+        /*
+            索引0   1   2     n    
+               0    1   -2    -n个图片的宽度 
+        */ 
+
+
+
+        for(var i=0; i<aBtn.length; i++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+                for(var j=0; j<aBtn.length; j++){
+                    aBtn[j].className = "";
+                }
+
+                this.className =  "active";
+                oImgBox.style.left = -this.index*750+"px";
+            }
+        }
+    
+    </script>
 
 
     
