@@ -62,7 +62,6 @@
     </style>
 </head>
 <body>
-
     <div id="container">
         <ul class="img-box">
             <li>
@@ -93,30 +92,44 @@
             <li id="next-btn">&gt;</li>
         </ul>
     </div>
-
     <script>
         var btnBox = document.getElementsByClassName("btn-box")[0];
         var aBtn = btnBox.getElementsByTagName("li");
         var oImgBox = document.getElementsByClassName("img-box")[0];
+        var oNext = document.getElementById('next-btn');
+        var iNow = 0;
         /*
             索引0   1   2     n    
                0    1   -2    -n个图片的宽度 
         */ 
-
-
-
         for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-                for(var j=0; j<aBtn.length; j++){
-                    aBtn[j].className = "";
-                }
 
-                this.className =  "active";
-                oImgBox.style.left = -this.index*750+"px";
+                change(this.index);
+
+                // for(var j=0; j<aBtn.length; j++){
+                //     aBtn[j].className = "";
+                // }
+                // this.className =  "active";
+                // oImgBox.style.left = -this.index*750+"px";
             }
         }
-    
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow > aBtn.length-1){
+                iNow = 0;
+            }
+            change(iNow);
+        }
+        function change(index){
+            for(var j=0; j<aBtn.length; j++){
+                aBtn[j].className = "";
+            }
+            aBtn[index].className = "active";
+            oImgBox.style.left = -index*750+"px";  
+        }
+        
     </script>
 
 
