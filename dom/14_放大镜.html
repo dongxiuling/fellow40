@@ -35,10 +35,14 @@
             height:400px;
             overflow: hidden;
             display: none;
+            position: relative;
         }
         #big-box img{
             width:800px;
             height:800px;
+            position: absolute;
+            left:0px;
+            top:0px;
 
         }
 
@@ -53,7 +57,7 @@
             <span id="drag"></span>
         </div>
         <div id="big-box">
-            <img src="images/2.jpg" alt="">
+            <img id="bigImg" src="images/2.jpg" alt="">
         </div>
 
     </div>
@@ -61,6 +65,8 @@
     <script>
         var oSmallBox = document.getElementById("small-box");
         var oDrag = document.getElementById("drag");
+        var oBigBox = document.getElementById("big-box");
+        var oBigImg = document.getElementById("bigImg")
         oSmallBox.onmouseover = function(){
             oDrag.style.display = "inline";
         }
@@ -90,13 +96,20 @@
             oDrag.style.top = iTop +"px";
 
             // 右边元素的位置 
-            
+            oBigBox.style.display = "block";
+            // 求出左边能走得最大距离  xMax     50%
+            // 求出右边能走得最大距离  大图的宽度 - 装大图的容器的宽度  50%  
+            //oBigImg.offsetWidth - oBigBox.offsetWidth
 
-
-
+            // 左侧 drag元素走得百分比 -》右侧大图应该走得距离
+            var bigLeft = (oBigImg.offsetWidth - oBigBox.offsetWidth)*iLeft/xMax ;
+            var bigTop = (oBigImg.offsetHeight - oBigBox.offsetHeight) * iTop/yMax;
+            oBigImg.style.left = -bigLeft+"px";
+            oBigImg.style.top = -bigTop+"px";
         }
         oSmallBox.onmouseout = function(){
             oDrag.style.display = "none";
+            oBigBox.style.display = "none";
         }
         
     </script>
