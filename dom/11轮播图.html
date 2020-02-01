@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
         }
-
         ul{
             list-style: none;
         }
@@ -99,15 +98,13 @@
         var oNext = document.getElementById('next-btn');
         var iNow = 0;
         /*
-            索引0   1   2     n    
-               0    1   -2    -n个图片的宽度 
+            索引 0   1   2     n    
+                0   1   -2    -n个图片的宽度 
         */ 
         for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-
                 change(this.index);
-
                 // for(var j=0; j<aBtn.length; j++){
                 //     aBtn[j].className = "";
                 // }
@@ -129,7 +126,8 @@
             aBtn[index].className = "active";
             oImgBox.style.left = -index*750+"px";  
         }
-        
+
+
     </script>
 
 
