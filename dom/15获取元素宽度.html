@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div3{
+            width:300px;
+            height:300px;
+            background: #0000ff;
+            padding: 20px;
+            border:5px solid #000;
+            margin:50px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div5" style="position: relative;">
+        <div id="div3"></div>
+
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div3')
+        console.log(oDiv.offsetWidth); //取到的是内容 + padding + border 只能取值 不能赋值
+        console.log(oDiv.offsetHeight); //取到的是内容 + padding + border
+        // offsetLeft 相对于最近已定位的祖先元素的左距离
+        // offsetTop  相对于最近已定位的祖先元素的上距离
+
+        console.log(oDiv.offsetParent); //最近已定位的祖先元素  没有定位的找到body
+    </script>
+</body>
+</html>

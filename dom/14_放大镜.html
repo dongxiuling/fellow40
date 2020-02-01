@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        #small-box{
+            width:400px;
+            height:400px;
+            position: relative;
+            float: left;
+        }
+        #small-box img{
+            width: 100%;
+            height:100%;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.5);
+            position: absolute;
+            left:0px;
+            top:0px;
+            display: none;
+            cursor: pointer;
+        }
+        #big-box{
+            float: left;
+            width:400px;
+            height:400px;
+            overflow: hidden;
+            display: none;
+        }
+        #big-box img{
+            width:800px;
+            height:800px;
+
+        }
+
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="small-box">
+            <img src="images/1.jpg" alt="">
+            <span id="drag"></span>
+        </div>
+        <div id="big-box">
+            <img src="images/2.jpg" alt="">
+        </div>
+
+    </div>
+
+    <script>
+        var oSmallBox = document.getElementById("small-box");
+        var oDrag = document.getElementById("drag");
+        oSmallBox.onmouseover = function(){
+            oDrag.style.display = "inline";
+        }
+        oSmallBox.onmousemove = function(e){
+            e = e || window.event;
+            // 1 求出drag 应该定位的left值 
+            // console.log(oDrag.offsetWidth)
+            var iLeft = e.clientX - oDrag.offsetWidth/2;
+            var iTop = e.clientY - oDrag.offsetHeight/2;
+
+            var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
+            var yMax =  oSmallBox.offsetHeight - oDrag.offsetHeight
+            // 2判断临界点 
+            if(iLeft < 0){
+                iLeft = 0;
+            }
+            if(iLeft > xMax ){
+                iLeft = xMax;
+            }
+            if(iTop < 0){
+                iTop = 0;
+            }
+            if(iTop > yMax){
+                iTop = yMax;
+            }
+            oDrag.style.left = iLeft +"px";
+            oDrag.style.top = iTop +"px";
+
+            // 右边元素的位置 
+            
+
+
+
+        }
+        oSmallBox.onmouseout = function(){
+            oDrag.style.display = "none";
+        }
+        
+    </script>
+</body>
+</html>
