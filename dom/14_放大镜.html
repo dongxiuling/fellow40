@@ -26,7 +26,7 @@
             position: absolute;
             left:0px;
             top:0px;
-            display: none;
+            /* display: none; */
             cursor: pointer;
         }
         #big-box{
@@ -76,7 +76,6 @@
             // console.log(oDrag.offsetWidth)
             var iLeft = e.clientX - oDrag.offsetWidth/2;
             var iTop = e.clientY - oDrag.offsetHeight/2;
-
             var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
             var yMax =  oSmallBox.offsetHeight - oDrag.offsetHeight
             // 2判断临界点 
@@ -94,7 +93,6 @@
             }
             oDrag.style.left = iLeft +"px";
             oDrag.style.top = iTop +"px";
-
             // 右边元素的位置 
             oBigBox.style.display = "block";
             // 求出左边能走得最大距离  xMax     50%
