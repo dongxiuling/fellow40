@@ -24,8 +24,10 @@
 
         // 节点属性（遍历）
 
-        /*  console.log(oDiv1.nextSibling); //ie中 只支持nextSibling 直接找到下一个元素节点 ；标准浏览器中找到的是下一个文本节点（回车+空格）
-            console.log(oDiv1.nextElementSibling) //dom3语法  
+        /*  
+            节点属性（遍历）
+            oDiv1.nextSibling; //ie中 只支持nextSibling 直接找到下一个元素节点 ；标准浏览器中找到的是下一个文本节点（回车+空格）
+            oDiv1.nextElementSibling //dom3语法  ie不支持 
             previousSibling  ie中直接找到上一个兄弟节点  标准浏览器下 会找到回车+空格
             previousElementSibling ie不支持
 
@@ -33,9 +35,7 @@
             firstElementChild
             lastChild 最后一个孩子
             lastElementChild 
-
-
-
+            children 元素节点所有孩子 所有浏览器都支持
 
         */
         // 封装一个方法  返回下一个元素节点  当元素没有下一个兄弟节点的时候 ，返回null
@@ -69,7 +69,7 @@
 
         // 找到第一个元素节点的孩子
         function first(){
-            
+
 
         }
     </script>
