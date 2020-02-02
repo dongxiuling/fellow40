@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 300px;
+            border:1px solid #000;
+        }
+        #container h2{
+            background: #000000;
+            color:#fff;
+            cursor: pointer;
+        }
+        #container ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h2>管理区</h2>
+            <ul>
+                <li>111</li>
+                <li>123</li>
+                <li>456</li>
+            </ul>
+        </div>
+        <div>
+            <h2>交流区</h2>
+            <ul>
+                <li>222</li>
+                <li>3dfgh</li>
+                <li>456</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aH2 = document.getElementsByTagName('h2');
+        var aUl = document.getElementsByTagName('ul');
+        // var flag = false;//true代表当前显示   false隐藏
+        for(var i=0; i<aH2.length; i++){
+            // aH2[i].index = i;
+            aH2[i].flag = false; //true代表当前显示   false隐藏
+            aH2[i].onclick = function(){
+                // 找到对应的ul显示 
+                // var oUl = aUl[this.index];
+                var oUl = next(this);
+                // 不能一直显示  ，判断 如果当前是显示的就隐藏 ，如果当前是隐藏的就显示 
+                if(this.flag){ //显示的
+                    oUl.style.display = "none";
+                }else{//隐藏
+                    oUl.style.display = "block";
+                }
+                this.flag = !this.flag;
+            }
+        }
+        function next(elem){ //返回下一个元素节点
+            do{
+                elem = elem.nextSibling;  
+            }while(elem && elem.nodeType != 1)   
+            //如果下一个（elem)的节点 不是null 并且类型不是元素节点，循环继续找
+            return elem;
+        }
+        
+    
+    </script>
+
+
+
+    
+</body>
+</html>
