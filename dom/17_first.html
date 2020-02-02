@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <!-- rtyui -->
+        <li>111</li>
+        <li>222</li>
+    </ul>
+
+
+    <script>    
+        var oUl = document.getElementById("ul1");
+        function first(elem){
+            // do{
+            //     elem = elem.firstChild;
+            // }while(elem && elem.nodeType !=1 )
+            // //元素节点的节点类型是1  判断不是元素节点 继续找
+            // return elem;
+
+            elem = elem.firstChild;
+            if(elem.nodeType !=1){
+                elem = next(elem)
+            }
+            return elem;
+        }
+        function next(elem){ //返回下一个元素节点
+            do{
+                elem = elem.nextSibling;  
+            }while(elem && elem.nodeType != 1)   
+            //如果下一个（elem)的节点 不是null 并且类型不是元素节点，循环继续找
+            return elem;
+        }
+        console.log( first(oUl) );
+    
+    </script>
+    
+</body>
+</html>
