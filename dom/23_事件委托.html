@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">click</button>
+        <ul id="ul1">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <script>
+            /* 事件委托  
+                解决后生成的元素事件绑定问题 
+                原理 事件绑定在父元素身上 ，点我点击子元素的时候 “通过事件冒泡” 会触发父元素的点击事件 
+                通过判断事件源 如果事件源是我们要绑定事件的li元素 ，执行事件处理内容
+
+                事件委托好处 1  解决后生成的元素事件绑定问题 
+                           2  绑定事件数量少
+            */
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.getElementsByTagName('li');
+            // 点击按钮 创建li插入到ul的内部的后边 
+            oBtn.onclick = function(){
+                var oLi = document.createElement("li");
+                oLi.innerHTML = Math.random();
+                oUl.appendChild(oLi);
+            }
+            // for(var i=0; i<aLi.length; i++){
+            //     aLi[i].onclick = function(){
+            //         console.log(this.innerHTML);
+            //     }
+            // }
+            // 点击li的时候 会触发父元素ul的事件 => 冒泡
+            oUl.onclick = function(e){
+                // console.log(Math.random());
+                // 事件源 谁导致的这个事件 事件源就是谁 
+                console.log("事件源",e.target);
+                // 判断事件源如果是li 输出li的内容
+                if(e.target.tagName == "LI"){
+                    console.log(e.target.innerHTML);
+                }
+            }
+        </script>
+        
+    </body>
+    </html>
+
+</body>
+</html>
