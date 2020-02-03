@@ -42,6 +42,23 @@
         // fn.apply(obj,['1111','22222']);
         //只改变this指向  不调用
         // fn.bind(obj,111,222)();
+
+
+
+        var obj = {
+            name:'zs',
+            age:20,
+            say:function(){
+                setTimeout(function(){
+                    console.log(this.name);
+                }.bind(this),1000)
+            }
+        }
+
+        obj.say();
+
+
+
     </script>
     
 </body>

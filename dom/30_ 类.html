@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        具有相同的属性和方法的集合
+     -->
+    <script>
+        // var obj = {
+        //     name:'zs',
+        //     age:20
+        // }
+        /* 类 构造函数 1通过在构造函数中this.属性 添加属性 
+            在prototype原型对象下定义方法
+        */
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+            this.sleep = function(){  //new Function()
+                console.log(this.name+'睡觉');
+            }
+        }
+        /* 构造函数下有一个prototype属性 ，属性是一个指针，指向原型对象 。
+        原型对象 下的属性和方法能被所有实例化对象所共享*/
+        Person.prototype.sleep = function(){  //Person.prototype原型对象
+            console.log(this.name+"正在睡觉。。。");
+        }
+        Person.prototype.eat = function(){
+            console.log(this.name +"正在吃。。。。。")
+        }
+        // 实例化对象 
+        var p1 = new Person("zs",10);  //执行Person函数 这时候有在Person函数中this指向实例化对象p1
+        var p2 = new Person('lis',20);  //执行Person函数 这时候有在Person函数中this指向实例化对象p2
+        p1.sleep();
+        p2.sleep();
+        // console.log(p1,p2);
+
+
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>
