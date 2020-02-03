@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    
+    </style>
+</head>
+<body>
+    <script>
+        var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        // 创建叶子类  研究属性 方法
+        function Leaf(){
+            this.width = Math.random()*50+100;  //100 -150像素
+            this.pos = {
+                left:Math.random()*(screenWidth-this.width), //0 - screenWidth-this.width 随机数
+                top:0
+            }
+            // 创建图片DOM 元素 添加src 1 -4 某一个
+            var oImg = new Image(); //创建图片
+            oImg.src= "img/"+ (Math.floor(Math.random()*4)+1) +".png"  //1-4随机选一个图
+            oImg.style.width = this.width+"px";
+            oImg.style.left = this.pos.left +"px"; 
+            oImg.style.top = this.pos.top +"px";
+            this.img = oImg;
+        }
+
+        // 初始化方法  -> 将叶子插入页面中 
+        Leaf.prototype.init = function(){
+            document.body.appendChild(this.img);
+        }
+
+        // var left1 = new Leaf();
+        // var left2 = new Leaf();
+        // left1.init();
+        // left2.init();
+        for(var i=0; i<5;i++){
+            var leaf = new Leaf();
+            leaf.init();
+        }
+    
+    
+    </script>
+    
+</body>
+</html>
