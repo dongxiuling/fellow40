@@ -9,12 +9,13 @@
         img{
             position: absolute;
         }
-    
     </style>
 </head>
 <body>
     <script>
+        // 获取屏幕宽度
         var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeigt = document.documentElement.clientHeight || document.body.clientHeight;
         // 创建叶子类  研究属性 方法
         function Leaf(){
             this.width = Math.random()*50+100;  //100 -150像素
@@ -22,6 +23,7 @@
                 left:Math.random()*(screenWidth-this.width), //0 - screenWidth-this.width 随机数
                 top:0
             }
+            this.speed = 5;
             // 创建图片DOM 元素 添加src 1 -4 某一个
             var oImg = new Image(); //创建图片
             oImg.src= "img/"+ (Math.floor(Math.random()*4)+1) +".png"  //1-4随机选一个图
@@ -30,19 +32,40 @@
             oImg.style.top = this.pos.top +"px";
             this.img = oImg;
         }
-
         // 初始化方法  -> 将叶子插入页面中 
         Leaf.prototype.init = function(){
             document.body.appendChild(this.img);
         }
-
-        // var left1 = new Leaf();
-        // var left2 = new Leaf();
-        // left1.init();
-        // left2.init();
-        for(var i=0; i<5;i++){
+        Leaf.prototype.fall = function(){
+            // 使用定时器 将叶子的top值 增加
+            // setTimeout只执行一次 延迟一段时间（随机）再下落
+            var that = this;
+            setTimeout(function(){
+                // window
+                that.timer = setInterval(function(){
+                    // 如果到达底部清楚定时器 
+                    if(that.img.offsetTop >= screenHeigt - that.img.offsetHeight){
+                        console.log(that.timer);
+                        clearInterval(that.timer);
+                    }else{
+                        // 取到当前的top + speed 
+                        that.img.style.top = that.img.offsetTop + that.speed +"px";
+                    }
+                }, 10);
+            }, Math.random()*500); //0-500
+        }
+        var leafs = []
+        for(var i=0; i<10;i++){
             var leaf = new Leaf();
+            leafs.push(leaf);
             leaf.init();
+        }
+
+        document.onclick = function(){
+            // 想让所有叶子调用 fall方法
+            for(var j=0; j<leafs.length; j++){
+                leafs[j].fall();
+            }
         }
     
     
