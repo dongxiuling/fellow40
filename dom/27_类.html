@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        js的数据类型 
+             基本数据类型
+                string number boolean null undefined
+                null(空对象) document.getElementById("fgh")取不到元素 返回null
+                undefined
+                    定义变量 没有赋值,值为undefined
+                    数组越界 
+                        var arr = [1,2]  arr[3] => undefined
+                    访问对象没有的属性  
+                       var obj =  {name:'zhangsan',age:20}   obj.school => undefined
+                    函数不写返回值  默认return  => undefined
+                        function a(){
+                            
+                        }
+                    
+             引用数据类型
+                array object 
+
+            判断数据类型 ： typeof 
+                    typeof "abc" => "string"
+                    typeof 123  => "number"
+                    typeof true  => "boolean"
+                    typeof null  => "object"  //空对象
+                    typeof undefined  => "undefined"
+                    typeof 函数  => "function"
+
+                    typeof [1,2,3]  =>   "object"
+                    typeof {name:'zhangsan',age:20}  =>  "object"
+                        
+                    判断数组还是对象  
+                        1 arr.constructor == Array 判断arr这个数组的构造函数是否是Array;
+                        2 通过Array.isArray 判断是都是数组
+                        3 instanceof运算符判断arr是否是Array的是一个实例化对象
+     -->
+     <script>
+        //  var a = "tdrfyghj";
+        //  console.log(typeof a);
+     
+        // function b(){
+
+        // }
+        // console.log(typeof b)
+
+
+        var arr = [1,2,3];
+        var obj = {
+            name:'zhangsan'
+        }
+        
+        // constructor构造函数 ，数组.constructor 返回数组的构造函数 Array
+    //     console.log(arr.constructor == Array);  // Array
+    //     console.log(obj.constructor == Object)  //Object
+
+
+    //    console.log( Array.isArray(obj))
+
+        console.log(obj instanceof Array) //instanceof运算符判断arr是否是Array的是一个实例化对象
+
+
+
+        
+
+     </script>
+
+
+
+</body>
+</html>
