@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+        哈哈哈
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+
+        oDiv.onclick = function(){
+            // 延迟1000ms输出 哈哈哈
+        //    this = >oDiv
+            setTimeout(function(){
+                console.log(this.innerHTML); //代表对当前对象的引用   Window
+            }.bind(this),1000);
+        }
+        // 改变this的指向 
+        /*
+            call()   第一个参数this 后边1，2，3参数依次写
+            apply()  第一个参数this 后边[1,2,3]参数放到数组中
+            bind()   第一个参数this 后边1，2，3参数依次写 只改变this指向 不调用
+        */
+        // var obj = {
+        //     name:'zs'
+        // }
+
+        // function fn(x,y){
+        //     console.log(this,x,y)
+        // }
+        // fn();
+        // call 第一个参数this指向的对象
+        // fn.call(obj,'11111','222');
+
+        // fn.apply(obj,['1111','22222']);
+        //只改变this指向  不调用
+        // fn.bind(obj,111,222)();
+    </script>
+    
+</body>
+</html>

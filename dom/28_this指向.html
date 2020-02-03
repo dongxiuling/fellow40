@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #0000ff;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <!-- 
+        this的使用 
+            1 事件中 触发的谁的事件 this就是谁 
+            2 定时器中  this指向window的 
+            3 函数中this 指向window
+            4 对象中 谁的方法this就是谁
+
+     -->
+   <script>
+       var oDiv = document.getElementById('div1');
+
+       oDiv.onclick = function(){
+           setTimeout(function(){
+                console.log(this); //代表对当前对象的引用   Window
+           },1000);
+       }
+   
+    //    setInterval(function(){
+    //         console.log(this)  //Window
+    //    },1000);
+
+        function a(){
+            console.log(this)
+        }
+        a();
+
+        var obj = {
+            name:'zxs',
+            age:'20',
+            eat:function(){
+                console.log(this.name+"正在吃")
+            }
+        }
+
+        obj.eat();   
+
+        
+
+
+
+   
+   </script>
+
+    
+</body>
+</html>
