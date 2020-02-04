@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .demo span:first-child{
+            background: red;
+        } */
+        .demo span:first-of-type{
+            background: red;
+        }
+        input:checked + span{
+            color: red;
+        }
+        #div3::after{
+            content:"哈哈哈哈";
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <p>p1</p>
+        <p>p2</p>
+        <span>span1</span>
+        <p>p3</p>
+        <span>span2</span>
+    </div>
+    <input type="radio" name="sex"><span>男</span>
+    <input type="radio" name="sex"><span>女</span>
+
+
+    <div id="div3">
+        森岛帆高行级块；了；lkjhgd
+    </div>
+   
+</body>
+</html>
