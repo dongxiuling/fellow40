@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+        }
+        #container{
+            margin:100px auto;
+            width:200px;
+            height: 200px;
+            position: relative;
+            perspective: 800px;
+        }
+        #container div{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+        #div2{
+            /* background: palevioletred; */
+            transform: rotateY(90deg) translateZ(100px);
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div1">1</div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div id="div4">4</div>
+        <div id="div5">5</div>
+        <div id="div6">6</div>
+    </div>
+   
+
+    
+</body>
+</html>
