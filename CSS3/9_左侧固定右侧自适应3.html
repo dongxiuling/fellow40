@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 左侧元素宽度固定 200px 
+         右侧自适应  多种方式实现
+    --> 
+    <style>
+        #div1{
+            height: 500px;
+            background: #ff0000;
+            position: relative;
+        }
+        #div2{
+            width: 200px;
+            height: 500px;
+            background: #0000ff;
+            /* float: left; */
+            position: absolute;
+            left:0px;
+            top:0;
+            /* margin-right:10px; */
+        }
+        #div3{
+            height: 500px;
+            background: pink;
+            margin-left:210px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+        </div>
+        <div id="div3">
+        </div>
+    </div>
+</body>
+</html>

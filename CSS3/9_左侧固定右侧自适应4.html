@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 左侧元素宽度固定 200px 
+         右侧自适应  多种方式实现
+    --> 
+    <style>
+        #div1{
+            height: 500px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 500px;
+            background: #0000ff;
+        }
+        #div3{
+            height: 500px;
+            background: pink;
+            margin-top:-500px;
+            margin-left:210px;
+        }
+    </style>
+</head>
+<body>
+    <!--     
+        左侧固定 右侧自适应 
+            1 弹性盒模型 
+                父元素display:flex
+                子元素左侧宽度固定 + 10margin
+                右侧flex:1占剩余宽度的1份
+            2 左侧浮动  右侧margin-left:210px 
+            3 左侧定位absolute  右侧margin-left:210px 
+            4 右侧元素margin-top  margin-left  移动 
+
+
+     -->
+    <div id="div1">
+        <div id="div2">
+        </div>
+        <div id="div3">
+        </div>
+    </div>
+</body>
+</html>

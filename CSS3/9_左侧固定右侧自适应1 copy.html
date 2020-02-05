@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 左侧元素宽度固定 200px 
+         右侧自适应  多种方式实现
+    --> 
+    <style>
+        #div1{
+            height: 500px;
+            background: #ff0000;
+            display: flex;
+        }
+        #div2{
+            width: 200px;
+            height: 500px;
+            background: #0000ff;
+            margin-right: 10px;
+        }
+        #div3{
+            /* 剩余空间的份数  */
+            flex:1;
+            height: 500px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+        </div>
+        <div id="div3">
+        </div>
+    </div>
+</body>
+</html>
