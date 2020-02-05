@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        body{
+            background: #ff0000;
+            /* 
+            display: flex;
+            align-items: center;  
+            justify-content: center;
+             */
+            position: relative;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            position: absolute;
+            left:50%;
+            top:50%;
+            /* 已知子元素的宽高  */
+            /* margin-left:-100px;
+            margin-top:-100px; */
+            /* 未知子元素的宽高  位移 值百分比 相对于自己宽高的百分比*/
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- css实现 子元素在父元素中水平垂直居中   -->
+    <!-- <div id="div1"> -->
+        <div id="div2">
+        </div>
+    <!-- </div> -->
+</body>
+</html>
