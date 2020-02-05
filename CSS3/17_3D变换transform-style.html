@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div0{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed #000;
+            margin:100px auto;
+            perspective: 800px;
+        }
+        #div1{
+            /* border:1px dashed #000; */
+            background: #0000ff;
+            width: 200px;
+            height: 200px;
+            /* perspective: 800px; */
+            transform: rotateY(30deg);
+            /* 指定子元素定位在三维空间内 */
+            transform-style: preserve-3d;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            transform:rotateY(45deg);
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1">
+            <div id="div2"></div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

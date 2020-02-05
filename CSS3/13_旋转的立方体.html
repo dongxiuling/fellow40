@@ -12,14 +12,23 @@
         }
         body{
             background: #000;
+            perspective: 800px;
         }
         #container{
             margin:100px auto;
             width:200px;
             height: 200px;
             position: relative;
-            perspective: 800px;
+            /* perspective: 800px; */
+            transform-style: preserve-3d;
+            animation: run 2s linear infinite;
         }
+        @keyframes run {
+            100%{
+                transform:rotateY(360deg);
+            }
+        }
+
         #container div{
             width: 200px;
             height: 200px;
@@ -36,7 +45,21 @@
             /* background: palevioletred; */
             transform: rotateY(90deg) translateZ(100px);
         }
-    
+        #div1{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        #div3{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        #div4{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        #div6{
+            transform: translateZ(100px);
+        }
+        #div5{
+            transform: rotateY(180deg) translateZ(100px);
+        }
     </style>
 </head>
 <body>
@@ -48,6 +71,9 @@
         <div id="div5">5</div>
         <div id="div6">6</div>
     </div>
+
+
+
    
 
     
