@@ -13,6 +13,11 @@
         body{
             background: url(img/bg.jpg);
         }
+        .item{
+            width: 125px;
+            height: 125px;
+            border:5px solid #fff;
+        }
     </style>
 </head>
 <body>
@@ -21,6 +26,7 @@
 
     </div>
     <script>
+        var oContainer = document.getElementById('container');
         var count= 0;
         //动态生成48张图片  等待48张图都加载完 再继续执行 loadSuccess
         //循环 加载24张小图
@@ -51,7 +57,23 @@
         }
 
         function loadSuccess(){
-            console.log('ok');
+            // 生成24个装图片的div 插入到页面中
+            var index = 0;
+            for(var i=0; i<4; i++){ //行
+                for(var j=0; j<6; j++){  //列
+                    var oDiv = document.createElement('div');
+                    oDiv.className = "item";
+                    index++;
+                    oDiv.style.background = "url(img/thumbs/"+(index)+".jpg) 0 0 no-repeat";
+                    //每个div上记录它的行和列
+                    oDiv.row = i; 
+                    oDiv.col = j;
+                    oContainer.appendChild(oDiv);
+
+                }
+            }
+
+
         }
 
 
