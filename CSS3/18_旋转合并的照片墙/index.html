@@ -17,6 +17,10 @@
             width: 125px;
             height: 125px;
             border:5px solid #fff;
+            position: absolute;
+            left:-135px;
+            top:-135px;
+            transition: all 1.5s ease ;
         }
     </style>
 </head>
@@ -69,12 +73,34 @@
                     oDiv.row = i; 
                     oDiv.col = j;
                     oContainer.appendChild(oDiv);
-
                 }
+            }
+            /* 设置div的left top 
+                col     0        1               2                n
+                left  1*spaceX   2*spaceX+1*img  3*spaceX+2*img   (n+1)*spaceX+n*img
+            */
+            // 1 求出spaceX 
+            var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var spaceX = (screenWidth - 135*6)/7; //水平空
+            var spaceY = (screenHeight- 135*4)/5 ;//垂直的空
+            var aDiv = oContainer.getElementsByTagName('div');
+            var divWidth =  aDiv[0].offsetWidth;
+            var divHeight =  aDiv[0].offsetHeight;
+            for(var i=0; i<aDiv.length; i++){
+                var col = aDiv[i].col;
+                var row = aDiv[i].row;
+                aDiv[i].style.left = (col+1)*spaceX  + col*divWidth +"px";
+                aDiv[i].style.top = (row +1)*spaceY + row*divHeight +"px";
             }
 
 
+
+
         }
+
+
+
 
 
 
