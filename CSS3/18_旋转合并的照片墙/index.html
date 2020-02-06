@@ -69,6 +69,7 @@
                     oDiv.className = "item";
                     index++;
                     oDiv.style.background = "url(img/thumbs/"+(index)+".jpg) 0 0 no-repeat";
+                    oDiv.onclick = fn;
                     //每个div上记录它的行和列
                     oDiv.row = i; 
                     oDiv.col = j;
@@ -88,11 +89,33 @@
             var divWidth =  aDiv[0].offsetWidth;
             var divHeight =  aDiv[0].offsetHeight;
             for(var i=0; i<aDiv.length; i++){
+                // 设置延迟时间 
+                aDiv[i].style.transitionDelay = (23-i)*100 +"ms";
                 var col = aDiv[i].col;
                 var row = aDiv[i].row;
                 aDiv[i].style.left = (col+1)*spaceX  + col*divWidth +"px";
                 aDiv[i].style.top = (row +1)*spaceY + row*divHeight +"px";
+                // 随机旋转-20  20 deg 
+                aDiv[i].style.transform = "rotate("+ (Math.random()*40-20) +"deg)";
             }
+            var iLeft = (screenWidth-6*127)/2;//左边空
+            var iTop = (screenHeight-4*127)/2;//上边空
+
+            // 点击事件处理函数  点击div -> 所有div位置重新变化 
+            function fn(){
+                for(var j=0; j<aDiv.length; j++){
+                    var oDiv = aDiv[j];
+                    oDiv.style.transitionDelay = "0ms";
+                    var col = aDiv[j].col;
+                    var row = aDiv[j].row;
+                    oDiv.style.left =  iLeft + col*127 +"px";
+                    oDiv.style.top = iTop + row*127+"px";
+                    oDiv.style.transform = "rotate(0deg)";
+                    oDiv.style.borderWidth = "1px";
+                }
+            }
+
+
 
 
 
