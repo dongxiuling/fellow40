@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img id="img" src="https://img.alicdn.com/tfs/TB1ZkoLukCWBuNjy0FaXXXUlXXa-966-644.jpg_970x970q100.jpg_.webp" alt=""> -->
+    <script>
+        var oImg = new Image();
+        oImg.onload = function(){ // onload放到.src的上边 兼容ie6
+            console.log('ok');
+        }
+        // oImg.src="img/1.jpg";
+        oImg.src="https://img.alicdn.com/tfs/TB1ZkoLukCWBuNjy0FaXXXUlXXa-966-644.jpg_970x970q100.jpg_.webp";
+        // document.body.appendChild(oImg);
+        // 等待图片加载完成再取图片的宽度 
+       
+
+       
+    
+    </script>
+</body>
+</html>

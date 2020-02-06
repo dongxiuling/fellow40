@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(img/bg.jpg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 存在24张图  -->
+    <div id="container">
+
+    </div>
+    <script>
+        var count= 0;
+        //动态生成48张图片  等待48张图都加载完 再继续执行 loadSuccess
+        //循环 加载24张小图
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            // 等oImg 加载完成 执行function事件处理函数
+            oImg.onload = function(){
+                // 48个图都加载完 再执行  loadSuccess();
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            }
+            oImg.src="img/thumbs/"+(i+1)+".jpg";
+           
+        }
+        // 循环加载24个大图 
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                // 48个图都加载完 再执行  loadSuccess();
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            }
+            oImg.src="img/"+(i+1)+".jpg";
+        }
+
+        function loadSuccess(){
+            console.log('ok');
+        }
+
+
+
+        
+       
+    
+    
+    </script>
+
+
+
+
+    
+
+</body>
+</html>
