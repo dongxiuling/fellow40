@@ -22,6 +22,12 @@
             top:-135px;
             transition: all 1.5s ease ;
         }
+        .bigImg{
+            width: 125px;
+            height: 125px;
+            display: none;
+            background: #ff0000;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +76,8 @@
                     index++;
                     oDiv.style.background = "url(img/thumbs/"+(index)+".jpg) 0 0 no-repeat";
                     oDiv.onclick = fn;
+                    oDiv.innerHTML = "<span class='bigImg'></span>";
+                    oDiv.idx = index-1; //div自定义索引 0-23
                     //每个div上记录它的行和列
                     oDiv.row = i; 
                     oDiv.col = j;
@@ -98,6 +106,7 @@
                 // 随机旋转-20  20 deg 
                 aDiv[i].style.transform = "rotate("+ (Math.random()*40-20) +"deg)";
             }
+
             var iLeft = (screenWidth-6*127)/2;//左边空
             var iTop = (screenHeight-4*127)/2;//上边空
 
@@ -105,15 +114,27 @@
             function fn(){
                 for(var j=0; j<aDiv.length; j++){
                     var oDiv = aDiv[j];
+                    var oSpan = oDiv.getElementsByTagName('span')[0];
                     oDiv.style.transitionDelay = "0ms";
                     var col = aDiv[j].col;
                     var row = aDiv[j].row;
+                    // div的宽度127 125+ 左右各一像素的边框
                     oDiv.style.left =  iLeft + col*127 +"px";
                     oDiv.style.top = iTop + row*127+"px";
                     oDiv.style.transform = "rotate(0deg)";
                     oDiv.style.borderWidth = "1px";
+                    oSpan.style.display = "block";
+                    // 如果我能知道点击的div的索引  -> 我要显示哪张大图   
+                    oSpan.style.background = "url(img/"+(this.idx+1)+".jpg) "+ -col*125 +"px "+ -row*125+"px";//找到跟当前点击的div索引对应的那张图
                 }
             }
+
+
+
+            
+
+
+            
 
 
 
@@ -121,7 +142,6 @@
 
 
         }
-
 
 
 
