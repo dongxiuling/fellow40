@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="div1">hahahahahah </div>
+    <ul>
+        <li>111</li>
+        <li  id="li1">222</li>
+        <li>3333</li>
+        <li>4444</li>
+        <li>5555</li>
+
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 原生js
+        var oDiv = document.getElementById('div1');
+
+        // jquery对象
+        var $div = $("#div1");
+
+        console.log(oDiv.innerHTML );
+        console.log($div.html() );
+        var oLi = document.getElementById('li1');
+        // 找兄弟  原生对象->jquery对象  $(原生对象)
+        console.log($(oLi).siblings());
+        // jquery对象 ->原生对象  [0]  .get(0)
+        // console.log($div[0])
+        console.log($div.get(0))
+        // $div.siblings();
+
+        
+    
+    </script>
+
+</body>
+</html>

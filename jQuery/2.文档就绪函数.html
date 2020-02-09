@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // window.onload = function(){ //等待资源加载完再执行  
+        //     console.log(111)
+        //     // var oDiv = document.getElementById('div1'); //null
+        //     // oDiv.style.background = 'red';
+        // }
+        // window.onload = function(){ //等待资源加载完再执行  
+        //     console.log(222)
+        //     // var oDiv = document.getElementById('div1'); //null
+        //     // oDiv.style.background = 'red';
+        // }
+
+
+
+        // 文档就绪函数 ->等待页面结构加载完再执行  不会等资源 简写成$(function(){})
+        $(document).ready(function(){
+            console.log(222)
+            // var $div = $("#div1");
+            // $div.css("background","red");
+        });
+        $(document).ready(function(){
+            console.log(111)
+        })
+        // 简写方式 
+        $(function(){
+            
+        })
+
+
+       
+
+
+        
+    </script>
+</head>
+<body>
+
+    <div id="div1">aaa</div>
+
+    
+    
+
+</body>
+</html>
