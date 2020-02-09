@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>111</li>
+        <li id="li2">222</li>
+        <li>333
+            <ul>
+                <li>3-1</li>
+                <li>3-2</li>
+                <li>3-3</li>
+            </ul>
+        </li>
+        <li>444</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $('li').eq(0).css('background','red');
+        // $('li').last().css('background','red');
+        $('#ul1').children().css('border','1px solid #000'); //子代
+
+        $("#ul1").find('li')  //后代
+        console.log(  $("#li2").siblings()  )
+        
+    </script>
+    
+</body>
+</html>
