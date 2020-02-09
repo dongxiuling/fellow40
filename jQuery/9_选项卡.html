@@ -65,9 +65,14 @@
             // console.log(this); //谁的点击事件this就是谁 
             // 点击的时候呀给自己添加active class名   this ->$(this) 转成jq对象    // 将其他兄弟的active方法移除
             $(this).addClass("active").siblings().removeClass("active"); //链式操作
+            // 找到和this 的索引对应的div 显示  $(this).index() 获取到索引
+            var index = $(this).index();
+            $('#content-box div').eq(index).addClass('selected').siblings().removeClass('selected');
         })
 
 
+
+        
 
 
         
