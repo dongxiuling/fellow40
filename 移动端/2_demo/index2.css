@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    width:960px;
+    height:100px;
+    background: #ccc;
+    margin:50px auto 0;
+    text-align: center;
+    line-height: 100px;
+}
+.img-container{
+    width:960px;
+    height: 540px;
+    margin:0 auto;
+    background: url(img/01.jpg) 0 0 no-repeat;
+    background-size:100% 100%;
+}
+
+/* .img-big{
+    display: block;
+} */
+
+#content{
+    width:960px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#left{
+    width:630px;
+    height: 300px;
+    background: #ff0000;
+    float: left;
+}
+#right{
+    width:300px;
+    height: 300px;
+    background: #0000ff;
+    float:right;
+}
+/* 小于等于960 */
+@media screen  and (max-width:960px){
+    h3{
+        width:100%;
+    }
+    .img-container{
+        width:100%;
+        /* height: ; */
+        background-image:url(img/01_s_2x.jpg);
+        /* 因为图片的高/宽  56%  */
+        padding-top:56%;
+        height:0px;
+    }
+    
+    #content{
+        width:100%;
+    }
+    #left{
+        width:65.6%;
+    }
+    #right{
+        width:31.25%;
+    }
+}
+@media screen  and (max-width:480px){
+    #left{
+        width:100%;
+    }
+    #right{
+        width:100%;
+    }
+    .img-container{
+        background-image:url(img/01_s_2x.jpg);
+    }
+}
