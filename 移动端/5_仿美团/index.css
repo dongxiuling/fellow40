@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style:none;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.24rem;
+    color: #333;
+}
+header{
+    display: flex;
+    height:1.01rem;
+    background: #ffc000;
+}
+.header-city{
+    width:1.8rem;
+    color:#222222;
+    font-size: 0.28rem;
+    font-family: PingFangSC-Medium;
+    text-align: center;
+    line-height: 1.01rem;
+}
+/* 362/2/50   64/2/50 */
+/* 80/2/50 = 0.8rem 
+.8rem*50 = 0.8rem *50 */
+/* 
+    1 页面中的px  100px  除缩放/2  除自己页面的/50 => 100px/100  = 求出1rem
+    2 0.3rem -> 0.3rem     0.3*html100 /2   = 15/50 = 0.3        
+*/
+.header-search{
+    /* flex:1; */
+    width:3.62rem;
+    height:0.64rem;
+    opacity: 0.9;
+    /* background: #FFFFFF; */
+    border-radius: 0.1rem;
+    margin-top:0.2rem;
+    line-height: 0.64rem;
+    text-decoration: none;
+    color:#999999;
+    padding-left: 0.35rem;
+    box-sizing: border-box;
+    /* padding-left: ; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #FFFFFF url(image/99c29829cf1b85d5cdbc76a1bd0b7329814.png) 0 0.18rem  no-repeat;
+    background-size:0.28rem 0.28rem;
+}
+.header-icon{
+    display: block;
+    width:.98rem;
+    text-align: center;
+    line-height: 1.01rem;
+}
