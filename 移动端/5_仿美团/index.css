@@ -9,6 +9,7 @@ body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.24rem;
     color: #333;
+    background: #f0efed;
 }
 header{
     display: flex;
@@ -88,7 +89,8 @@ header{
     display: flex;
     /* 设置或检索伸缩盒对象的子元素超出父容器时是否换行。 */
     flex-wrap: wrap; 
-    border-bottom: 1px solid #DDD8CE;;
+    border-bottom: 1px solid #DDD8CE;
+    background: #fff;
 }
 .list li{
     width:20%;
@@ -122,4 +124,47 @@ header{
 .list p{
     color: #666;
     margin-top:0.14rem;
+}
+/* 猜你喜欢开始 */
+.like-box{
+    margin-top:0.2rem;
+    background: #fff;
+    border-top: 1px solid #DDD8CE;
+    padding-left:.2rem;
+}
+.like-title{
+    font-size: .34rem;
+    color: #333;
+    height: 0.83rem;
+    line-height: 0.83rem;
+    font-weight: normal;
+}
+.like-list-box li{
+    border-top:1px solid #DDD8CE;
+}
+.like-list{
+    display: flex;
+    color: #666;
+    text-decoration: none;
+    padding:0.28rem 0.2rem 0.28rem 0;
+}
+.like-list img{
+    width:1.8rem;
+    margin-right:0.2rem;
+}
+.like-info{
+    flex:1;
+}
+.info-title{
+    font-size: 0.3rem;
+    color:#333;
+    margin-bottom: 0.12rem;
+}
+.info-desc{
+    height: .68rem;
+    overflow: hidden;
+}
+.info-price{
+    font-size: .36rem;
+    color: #F60;
 }
