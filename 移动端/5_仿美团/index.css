@@ -56,3 +56,70 @@ header{
     text-align: center;
     line-height: 1.01rem;
 }
+
+/* 下载开始 */
+.download{
+    display: flex;
+    background: #000000;
+    padding:0.16rem 0.3rem;
+}
+.download-logo{
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-right:0.2rem;
+}
+.download-txt{
+    color:#fff;
+    flex:1;
+}
+.download-btn{
+    width: 1.1rem;
+    height: 0.6rem;
+    border-radius: 0.14rem;
+    background: #ffc000;
+    text-align: center;
+    line-height: 0.6rem;
+    color: #000000;
+    text-decoration: none;
+}
+/* 下载结束 */
+/* 列表 */
+.list{
+    display: flex;
+    /* 设置或检索伸缩盒对象的子元素超出父容器时是否换行。 */
+    flex-wrap: wrap; 
+    border-bottom: 1px solid #DDD8CE;;
+}
+.list li{
+    width:20%;
+    height:1.62rem;
+    padding:0.2rem 0;
+    box-sizing: border-box;
+    /* background: #ff0000; */
+    text-align: center;
+}
+.list span{
+    width: .8rem;
+    height: .8rem;
+    border-radius: .8rem;
+   
+    display: block;
+    margin:0 auto;
+    line-height: .8rem;
+    color:#fff;
+    font-size: 0.34rem;
+    font-weight: 900;
+}
+.list span.list1{
+    background: #fd9d21;
+}
+.list span.list2{
+    background: #ff6767;
+}
+.list span.list3{
+    background: #8a90fa;
+}
+.list p{
+    color: #666;
+    margin-top:0.14rem;
+}
