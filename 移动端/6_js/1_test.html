@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>                
+</head>
+<body>                                          
+    <div id="div1">
+
+    </div>
+    <script>    
+        // touch触屏事件 原生js带的
+        var oDiv = document.getElementById('div1');
+        oDiv.addEventListener('touchstart',function(){
+            console.log('touchstart');
+        })
+        oDiv.addEventListener('touchend',function(){
+            console.log('touchend');
+        });
+        oDiv.addEventListener('touchmove',function(){
+            console.log('touchmove');
+        });
+        // click事件 有300ms的延迟  区分单机和双击事件
+        oDiv.addEventListener('click',function(){
+            console.log('click');
+        });
+
+
+    
+    </script>
+</body>
+</html>

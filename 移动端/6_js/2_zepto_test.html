@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            touch-action: none;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">haha</div>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script>
+        // zepto tap  swipe滑动
+
+        // $("#div1").on('tap',function(){
+        //     console.log('tap');
+        // });
+        // $("#div1").on('singleTap',function(){
+        //     console.log('singleTap');
+        // });
+        // $("#div1").on('doubleTap',function(){
+        //     console.log('doubleTap');
+        // });
+
+        $('#div1').on("swipe",function(){
+            console.log("swipe");
+        })
+        $('#div1').on("swipeLeft",function(){
+            console.log("swipeLeft");
+        })
+        $('#div1').on("swipeRight",function(){
+            console.log("swipeRight");
+        })
+
+        // $('#div1').on('touch')
+
+
+    
+    </script>
+
+</body>
+</html>
