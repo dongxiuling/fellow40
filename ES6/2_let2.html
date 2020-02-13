@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <!-- 
+        闭包 外层函数嵌套内层函数 ，内层函数引用外层函数中的局部变量
+        这样就使得外层函数的变量不释放 一直存在内存中 
+     -->
+    <script>
+        var aLi = document.getElementsByTagName('li');
+
+        for (var i = 0; i < aLi.length; i++) {  //i=3
+            (function (i) {//函数立即调用 
+                aLi[i].onclick = function () {
+                    console.log(i);
+                }
+            })(i);
+        }
+
+        // function a(){
+        //     var x = 10;
+        //     // console.log(x);
+        //     return function(){
+        //         console.log(x+5);
+        //     }
+        // }
+        // var b = a();
+        // b();
+        // b();
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
