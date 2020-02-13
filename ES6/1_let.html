@@ -11,7 +11,8 @@
         let 和var的区别
             1 let没有变量提升
             2 let不能重复声明 
-
+            3 块级作用域
+            4 暂时性死区 临时失效区
 
      -->
     <script>
@@ -48,20 +49,40 @@
         // console.log(x); // x is not defined
         
         // var m = true;
-        // if(m){
-        //     let n = 100;
-        // }
-
+        if(m){
+            let n = 100;
+        }
         // console.log(n); //n is not defined
 
+        // 4 临时失效区  暂时性死区 当前作用域内不允许同名的变量进来 
+        
+            var p = 10;
+            function fn(){
+                var p;
+                console.log(p);  //undefined
+                var p = 20;
+                console.log(p);  //20
+            }
+            fn();
         
 
+        var p = 10;
+        function fn(){
+            console.log(p);  //报错
+            let p = 20; //1 let定义的变量不能提升 2当前作用域内跟他同名的变量进不来
+            console.log(p);  //20
+        }
+        fn();
 
-        
+     
 
 
-        
-        
+
+
+
+
+
+
         
     </script>
     

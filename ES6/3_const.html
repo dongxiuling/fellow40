@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        cosnt 定义常量 定义数组或者对象 指向的对象（指针）不能修改，但是指针指向的值是可以改的
+            1 let没有变量提升
+            2 let不能重复声明 
+            3 块级作用域
+            4 暂时性死区 临时失效区
+     -->
+    <script>
+        const a = 10;
+        const obj = {
+            name:'zs',
+            age:20
+        }
+        // obj = {
+        //     name:'lisi'
+        // }
+        // 冻结
+        Object.freeze(obj);
+        obj.name = "lisi";
+        console.log(obj)
+        
+        
+        
+    </script>
+</body>
+</html>

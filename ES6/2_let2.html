@@ -21,14 +21,20 @@
     <script>
         var aLi = document.getElementsByTagName('li');
 
-        for (var i = 0; i < aLi.length; i++) {  //i=3
-            (function (i) {//函数立即调用 
-                aLi[i].onclick = function () {
-                    console.log(i);
-                }
-            })(i);
+        // for (var i = 0; i < aLi.length; i++) {  //i=3
+        //     (function (i) {//函数立即调用  
+        //         aLi[i].onclick = function () {
+        //             console.log(i);  //内部函数中引用外部函数中的局部变量 ，外部函数中的局部变量不会释放
+        //         }
+        //     })(i);
+        // }
+        // let定义的变量有块级作用域
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            }
         }
-        
+
         // function a(){
         //     var x = 10;
         //     // console.log(x);
