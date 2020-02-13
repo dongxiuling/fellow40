@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #container img{
+            width:25%;
+            display: block;
+            border-right:1px solid #000;
+            border-bottom:1px solid #000;
+            box-sizing: border-box;
+        }
+        #big{
+            position: absolute;
+            left:0;
+            top:0;
+            /* width:100%;
+            height: 100%; */
+            right: 0;
+            bottom:0;
+            background:#000000 url(img/1.jpg) center center no-repeat;
+            background-size: contain;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <div id="big"></div>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script>
+        for(var i=0; i<24; i++){
+            $('#container').append("<img src='img/thumbs/"+(i+1)+".jpg' />");
+        }
+        // 所有图片绑定点击事件 
+        $("#container img").on('click',function(){
+            // 1 大图显示
+            $("#big").show();
+            // 2 显示点击小图对应的大图 => img/2.jpg
+            // $(this).index();   获取点击小图的索引 -> index+1
+            $("#big").css("background-image","url(img/"+($(this).index()+1)+".jpg)");
+        })
+
+    </script>
+</body>
+</html>
