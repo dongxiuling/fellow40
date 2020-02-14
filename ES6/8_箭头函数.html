@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+    <script>
+        /*
+        function fn(){
+
+        }
+        fn();
+
+        let a = function(){
+
+        }
+        a();
+
+        let fn2 = (x,y) => {
+
+        }
+        fn2(1,2);
+
+        let fn3 = m => m;
+
+        let fn3 = (m) => {return m};
+        */
+        /*
+        var aLi = document.getElementsByTagName('li');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                // this
+                setTimeout(function(){//定时器中this指向window
+                    console.log(this.innerHTML);
+                }.bind(this),1000);
+            }
+        }
+        */
+        /*
+            箭头函数
+                1 箭头函数中this指向声明时的this（父作用域的this),普通函数this指向调用时的this
+        */
+        var aLi = document.getElementsByTagName('li');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = ()=>{
+                // this
+                setTimeout(()=>{//定时器中this指向window
+                    console.log(this); //this?
+                },1000);
+            }
+        }
+
+
+
+
+
+
+
+
+
+        // function fn(x,y){
+
+        // }
+        // fn.call(obj,1,2);
+        // fn.apply(obj,[1,2]);
+        // fn.bind(obj,1,2)()
+
+
+
+
+      
+    </script>
+
+
+    
+</body>
+</html>
