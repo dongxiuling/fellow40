@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName('li'); //类数组
+
+        /* 类数组->数组
+            1 循环取
+            2 [...aLi]
+            3 Array.from()
+        */
+
+        /*
+        var aLi2 = Array.from(aLi);
+        aLi2.push(3)
+        console.log(aLi2);
+        */
+        /*
+        let arr = [{
+            name: 'zs',
+            age: 20
+        }, {
+            name: 'lisi',
+            age: 30
+        }, {
+            name: 'wagwu',
+            age: 18
+        }];
+
+        // 找到第一个符合条件的成员 返回
+        var person = arr.find(function(obj){
+            return obj.age > 20;
+        })
+
+        console.log(person);
+        */
+
+        /*
+        let arr3 = [1,2,3]
+        console.log( arr3.includes(4));
+        */
+
+
+        let arr = [{
+            name: 'zs',
+            age: 20
+        }, {
+            name: 'lisi',
+            age: 30
+        }, {
+            name: 'wagwu',
+            age: 18
+        }];
+
+        for([index,obj] of arr.entries()){  //[0,{name:'zs',age:20}]
+            // console.log(elem[0],elem[1]);
+            console.log(index,obj)
+        }
+
+        [a,b] = [1,2]
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

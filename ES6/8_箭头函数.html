@@ -47,7 +47,10 @@
         /*
             箭头函数
                 1 箭头函数中this指向声明时的this（父作用域的this),普通函数this指向调用时的this
+                2 箭头函数不能用new 不能作为构造函数
+                3 箭头函数中不能使用arguments关键字
         */
+        /*
         var aLi = document.getElementsByTagName('li');
         for(var i=0; i<aLi.length; i++){
             aLi[i].onclick = ()=>{
@@ -57,6 +60,58 @@
                 },1000);
             }
         }
+        */
+        /*
+        var obj = {
+            name:'zs',
+            age:20,
+            say:()=>{
+                // this
+                setTimeout(()=>{
+                    console.log(this);  //window
+                })
+            }
+        }
+
+        obj.say();
+
+        */
+
+        // let obj2 = {
+        //     name:'xx',
+        //     say:function(){
+
+        //     }
+        // }
+
+
+        // 2 箭头函数不能作为构造函数
+        /*
+        function Person(name){
+            this.name = name;
+        }
+        new Person(){
+
+        }
+        */
+        /*
+        
+        let Person = () =>{
+
+        }
+
+        let p1 = new Person();  //Person is not a constructor
+        */
+
+        let fn = (...rest) =>{
+            console.log(rest); 
+        }
+        fn(1,2,3);
+
+
+
+
+
 
 
 
