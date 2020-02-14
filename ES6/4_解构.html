@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3];
+        // let a = arr[0];
+        // let b = arr[1];
+        // let c = arr[2];
+
+        // let [a,b,c] = arr;
+        let arr1 = [1, 2, 3, [4, 5], 6];
+        let [a, b, c, d, e] = arr1;   //1 2 3 [4,5] ,6 
+        console.log(a, b, c, d, e);
+
+
+        let obj = {
+            name: 'zs',
+            age: 20
+        }
+        // 对象 属性对应赋值
+        let { age, name: xx } = obj;
+        console.log(age, xx);
+
+        // 字符串解构
+        let [f, g, h, i, j] = '1234';
+        console.log(f, g, h, i, j);
+
+
+        function fn([x,y,z]){
+            // [x,y,z] = [1,2,3]
+        }
+        fn([1,2,3]);
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
