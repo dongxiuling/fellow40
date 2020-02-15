@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组去重 2
+        /*
+        let arr = [1,2,4,5,4,3,5,6,7];
+        let arr2 = new Set(arr); //类数组
+        // let arr3 = [...arr2];
+        let arr3 = Array.from(arr2);
+        console.log(arr3);
+        */
+
+        // 数组去重2 利用对象的属性不能相同的特点 进行去重
+
+        function fn(arr){
+            let obj ={}; //用来记录数组中是否出现过 
+            var result = [];
+            for(var i=0; i<arr.length; i++){
+                let val = arr[i];
+                if(!obj[val]){ //obj.4
+                    obj[val] = 1; //obj.4 = 1
+                    result.push(val);
+                }else{
+                    obj[val]++;//计数
+                }
+            }
+            return result;
+        }
+        let arr = [1,2,4,5,4,3,5,6,7];
+        console.log(  fn(arr)  );
+
+        let arr = [1,2,4,5,4,3,5,6,7];
+        let arr2 = new Set(arr); //类数组
+        arr2.add(8);
+
+
+    
+    
+    </script>
+
+
+</body>
+</html>

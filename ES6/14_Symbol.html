@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            sting number boolean null undefined Symbol
+
+            array object
+        */
+        let a = Symbol('a');
+        let b = Symbol('b');
+        // console.log(a,b);
+
+        let obj = {
+            name:'zs',
+            [Symbol()]:'aaaaa',
+            [Symbol()]:'bbbbbb'
+        }
+        // Symbol类型属性 该属性不会出现在for...in循环中
+        for(key in obj){
+            console.log(key);
+        }
+
+
+
+    
+    
+    </script>
+</body>
+</html>
