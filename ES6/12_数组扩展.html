@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>11</li>
+        <li>11</li>
+    </ul>
+    <script>
+        //1 Array.from 类数组转成数组
+        /*
+        let aLi = document.getElementsByTagName('li');
+        Array.from(aLi);
+        */
+        //2 includes 判断数组是否包含
+        /*
+        let arr = [1,2,3,4,5,6];
+        console.log( arr.includes(8) );
+        */
+        //3 find 查找第一个符合条件的成员
+        /*
+        let arr3 = [6,3,5,9,1,4,7];
+        let num = arr3.find(function(val,index){
+            // console.log(index,val)
+            return val > 8;
+        });
+        console.log(num);
+        */
+        // 4 for of 循环
+        let arr4 = [6,3,5,9,1,4,7];
+        /*
+        for(val of arr4){ //值
+            console.log(val);
+        }*/
+        /*for(val of arr4.keys()){ //索引
+            console.log(val);
+        }*/
+        /*
+        for([index,val] of arr4.entries()){ //索引和值
+            console.log(index,val);
+        }*/
+        //5 forEach循环
+        /*
+        let arr5 = [6,3,5,9,1,4,7];
+        arr5.forEach(function(val,index){
+            console.log(val,index);
+        })
+        */
+        // 6 filter过滤出符合条件的成员  返回数组
+        /*
+        let arr6 =  [6,3,5,9,1,4,7];
+        arr6.filter(function(val,index){
+            return val>5;
+        });
+        */
+        // 7 map 映射出符合条件的新数组
+        /*let arr7 =  [6,3,5,9,1,4,7];
+
+        var arr8 = arr7.map(function(val,index){
+            return val*2;
+        });
+        console.log(arr8);
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+    
+    
+</body>
+</html>
