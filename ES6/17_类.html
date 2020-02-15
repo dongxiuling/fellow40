@@ -24,22 +24,36 @@
         // p1 p2 实例化对象
         let p1 = new Person('zs',20);
         let p2 = new Person('lisi',18);
-        p1.say();
-        p2.say();
+        // p1.say();
+        // p2.say();
         /*
          程序员 继承人的属性和方法  
-         继承属性在子类的构造函数中通过父类.call继承属性 
+         在子类的构造函数中通过父类.call继承属性 
+         通过子类.propotype = new 父类继承方法
+         //将原本prototype原型对象下的constructor属性 指回子类的构造函数
         */
         function Coder(name,age){
-            console.log(this)//this->c1
+            // console.log(this)//this->c1
             // 继承人的属性
             // Person(name,age); //Person中的this指向 ->window 改为this指向->c1
             Person.call(this,name,age);  //传this是谁  给谁添加name和age属性 
         }
-        let c1 = new Coder('xiaoqiang',18); 
+
+        // console.log(c1,c2);
+        // Coder的原型对象是人
+        Coder.prototype = new Person(); 
+        Coder.prototype.constructor = Coder; //将原本prototype原型对象下的constructor属性 指回构造函数Coder
+
+        let c1 = new Coder('xiaoqiang',18);  //new Coder 通过调用Person.call()将this(c1) 传到Person中，
         let c2 = new Coder('daqiang',20); 
-        
-        console.log(c1,c2);
+        c1.say();
+        c2.say();
+
+        // function fn(){
+        //     this  
+        // }
+        // // let f1 = new fn();
+        // fn.call()
 
     </script>
     
