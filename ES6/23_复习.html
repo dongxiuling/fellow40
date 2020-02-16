@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="movieList">
+
+    </ul>
+    <script>
+        //AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
+        // 异步 不阻塞下边代码执行 
+
+        // alert('haha');
+        // setTimeout(function(){
+        //     console.log('hahah');
+        // },1000)
+        // console.log('hehe');
+
+
+        // 1 AJAX - 创建 XMLHttpRequest 对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        // 2 AJAX - 向服务器发送请求
+        xmlhttp.open(
+            "GET",
+            'https://douban.uieee.com/v2/movie/top250?start=0&count=2',
+            true);
+        xmlhttp.send();
+        // 3 AJAX - 服务器响应
+        xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status==200){
+                // JSON ->对象
+                var data = JSON.parse(xmlhttp.responseText)
+                // console.log(data.subjects);
+
+                data.subjects.forEach(function(obj,index){
+                    // console.log(obj.title)
+                    // console.log(obj.images.small);
+                    // 1 创建li
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = obj.title;
+                    document.getElementById('movieList').appendChild(oLi);
+                })
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

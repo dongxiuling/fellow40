@@ -30,13 +30,14 @@
             // 响应
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
                     // xmlhttp.responseText后台返回的数据 
-                    // 将后台返回的json对象 转成 普通的对象JSON.parse
+                    // JSON.parse 将后台返回的json对象 转成 普通的对象
                     var proObj = JSON.parse(xmlhttp.responseText);
                     // 将对象的名称通过dom操作显示在页面中
                     var oDiv = document.getElementById('div1');
                     oDiv.innerHTML = proObj.proName;
+                }else{
+                    
                 }
             }
         }
