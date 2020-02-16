@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="never">
     <title>Document</title>
 </head>
 
@@ -21,14 +22,12 @@
         //     console.log('hahah');
         // },1000)
         // console.log('hehe');
-
-
         // 1 AJAX - 创建 XMLHttpRequest 对象
         var xmlhttp;
         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         }
-        else {// code for IE6, IE5
+        else {// code for IE6, IE5b
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         // 2 AJAX - 向服务器发送请求
@@ -48,7 +47,12 @@
                     // console.log(obj.images.small);
                     // 1 创建li
                     var oLi = document.createElement('li');
-                    oLi.innerHTML = obj.title;
+                    var oH3 = document.createElement('h3');
+                    var oImg = document.createElement('img');
+                    oH3.innerHTML = obj.title;
+                    oImg.src = obj.images.small;
+                    oLi.appendChild(oH3);
+                    oLi.appendChild(oImg);
                     document.getElementById('movieList').appendChild(oLi);
                 })
             }
