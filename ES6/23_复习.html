@@ -34,7 +34,7 @@
         // 2 AJAX - 向服务器发送请求
         xmlhttp.open(
             "GET",
-            'https://douban.uieee.com/v2/movie/top250?start=0&count=2',
+            'https://douban.uieee.com/v2/movie/top250?start=0&count=10',
             true);
         xmlhttp.send();
         // 3 AJAX - 服务器响应
@@ -43,7 +43,6 @@
                 // JSON ->对象
                 var data = JSON.parse(xmlhttp.responseText)
                 // console.log(data.subjects);
-
                 data.subjects.forEach(function(obj,index){
                     // console.log(obj.title)
                     // console.log(obj.images.small);
