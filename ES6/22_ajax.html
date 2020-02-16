@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <div id="div1"></div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function () {
+            // 1 创建 XMLHttpRequest 对象
+            var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            // 发送请求   通过本地模拟数据22.json
+            xmlhttp.open("GET", "22.json", true); //规定请求的类型、URL 以及是否异步处理请求。
+            xmlhttp.send();
+
+            // 响应
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                    // xmlhttp.responseText后台返回的数据 
+                    // 将后台返回的json对象 转成 普通的对象JSON.parse
+                    var proObj = JSON.parse(xmlhttp.responseText);
+                    // 将对象的名称通过dom操作显示在页面中
+                    var oDiv = document.getElementById('div1');
+                    oDiv.innerHTML = proObj.proName;
+                }
+            }
+        }
+    </script>
+
+    <!-- 
+        readyState	
+            存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+            0: 请求未初始化
+            1: 服务器连接已建立
+            2: 请求已接收
+            3: 请求处理中
+            4: 请求已完成，且响应已就绪
+     -->
+    <!-- 
+        get post区别
+            get表示请求 ，post表示提交
+            get数据量比较小 4k,post请求比较大
+            
+            get请求放在地址栏中  post是放在包体里，相对安全
+            get可以缓存 post不能
+            一般获取数据用get 表单提交post
+    -->
+    <!-- 
+        status状态码
+            200代表成功
+            404资源找不到 
+            500服务器错误
+            304缓存
+            301永久重定向 
+            302临时重定向
+            403资源不可用
+     -->
+</body>
+
+</html>

@@ -26,7 +26,7 @@
         let p1 = new Person('zhangsan',20);
         p1.say()
         Person.xx() //静态方法
-
+        // 继承  extends  super
         class Coder extends Person{
             constructor(name,age){
                 super(name,age)//调用父类的构造函数 
@@ -41,6 +41,7 @@
         console.log(c1);
         c1.say();
         c1.coding();
+        Coder.xx()
 
 
         /*
