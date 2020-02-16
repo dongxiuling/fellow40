@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在构造函数中定义属性  在原型下定义方法
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log('dfghjk')
+        }
+        let p1 = new Person('lisi',18)
+
+        // 继承 在子类的构造函数中通过父类.call继承属性
+        function Coder(name,age){
+            // this->c1  在构造函数中 this指向实例化对象
+            Person.call(this,name,age)
+        }
+        Coder.prototype = new Person();
+        Coder.prototype.constructor = Coder;
+        
+        let c1 = new Coder('zs',20);
+
+
+
+       
+
+        
+    </script>
+
+
+</body>
+</html>

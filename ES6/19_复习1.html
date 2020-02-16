@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,3];
+        // Array.from(aLi);//类数组转成数组
+        arr.includes(1);
+        // 查找第一个符合条件的成员
+        var result = arr.find(function(val,index){
+            // console.log(val,index)
+            return val%2 == 0;
+        })
+
+        // console.log(result)
+        // 循环
+        /*
+        for(val of arr){
+            console.log(val)
+        }
+        for([index,val] of arr.entries()){
+            console.log(index,val)
+        }
+        for(index of arr.keys()){
+            console.log(index);
+        }
+        */
+        /*
+        arr.forEach(function(val,index){
+            console.log(val,index);
+        })
+        */
+
+        // filter过滤出符合条件的成员
+        /*
+        var arr3 = arr.filter(function(val,index){
+            return val%2 ==0;
+        })
+
+        console.log(arr3)
+        */
+
+        // map 映射出一个新数组
+        console.log(arr)
+        var arr5 = arr.map(function(val,index){
+            return val*2+1;
+        })
+        console.log(arr5);
+
+        let name="zs";
+        let obj = {
+            name,
+            say(){
+
+            }
+        }
+    
+    
+    </script>
+
+</body>
+</html>
