@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proxy</title>
+</head>
+<body>
+    
+    <script>
+    
+        let obj = {
+            name:'zs',
+            age:20
+        }
+        let pro = new Proxy(obj,{
+            // obj  name  lisi
+            set:(target,key,property)=>{
+                // console.log(target,key,property)
+                console.log(`我将要修改${obj}对象的${key}属性`);
+                // console.log(target,key,property);
+                target[key] = property;
+                console.log('修改成功了。。。。');
+            },
+            get:(target,key,property)=>{//obj对象 name属性 pro对象
+                console.log(target,key,property);
+                return  target[key];
+            }
+        })
+        // 设置属性  set
+        pro.name = 'lisi';
+        pro.age = '30';
+        // console.log(obj)
+
+        console.log(pro.name);
+
+        // object.defineProperty ES5
+    
+    
+    </script>
+</body>
+</html>
