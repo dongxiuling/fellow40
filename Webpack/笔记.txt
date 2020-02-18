@@ -9,3 +9,11 @@ npx 帮助我们再当前项目目录的node_modules中找到webpack
     执行npm run build 执行当前项目目录中的webpack 默认打包项目根目录下的src/index.js
 
 二、配置
+
+
+
+
+
+
+大家下载我的代码 ，没有node_modules文件夹 ，自己手动下载
+npm install 会根据你项目根目录下package.json文件中的devDependencies中依赖项去下载
