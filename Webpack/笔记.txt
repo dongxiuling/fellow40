@@ -1,0 +1,11 @@
+一、打包
+1.  npx webpack index.js
+npx 帮助我们再当前项目目录的node_modules中找到webpack
+
+2、将package.json修改
+    "scripts": {
+        "build": "webpack"
+    },
+    执行npm run build 执行当前项目目录中的webpack 默认打包项目根目录下的src/index.js
+
+二、配置
