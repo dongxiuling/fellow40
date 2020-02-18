@@ -10,10 +10,10 @@ npx 帮助我们再当前项目目录的node_modules中找到webpack
 
 二、配置
 
-
+url-loader  cnpm i url-loader -D
 
 
 
 
 大家下载我的代码 ，没有node_modules文件夹 ，自己手动下载
-npm install 会根据你项目根目录下package.json文件中的devDependencies中依赖项去下载
+cnpm install 会根据你项目根目录下package.json文件中的devDependencies中依赖项去下载
