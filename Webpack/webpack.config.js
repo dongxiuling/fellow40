@@ -8,5 +8,15 @@ module.exports = {
         filename:"bundle.js",
         // path是绝对路径 
         path:path.resolve(__dirname,"dist")
+    },
+    module:{
+        rules:[
+            {
+                test:/\.(jpg|png|gif)$/,
+                use:{
+                    loader:'url-loader'
+                }
+            }
+        ]
     }
 }
