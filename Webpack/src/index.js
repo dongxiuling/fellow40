@@ -1,4 +1,4 @@
-// es6引入模块的方式 
+// es6引入模块的方式  ./代表当前路径
 import img from './img/24.jpg';
 console.log('111111');
 var oImg = new Image();
