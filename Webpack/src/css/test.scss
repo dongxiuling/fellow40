@@ -1,4 +1,12 @@
 $color:blue;
 body{
     background: $color;
+    
+}
+div{
+    width: 100px;
+    height: 100px;
+    background: #ff0000;
+    transform: translate(100px,100px);
+    box-shadow: 2px 3px 3px 4px rgba(0,0,0,0.3);
 }
