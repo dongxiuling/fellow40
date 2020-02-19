@@ -10,7 +10,9 @@ npx 帮助我们再当前项目目录的node_modules中找到webpack
 
 二、配置
 
-url-loader  cnpm i url-loader -D
+url-loader file-loader  cnpm i url-loader  file-loader -D
+
+style-loader css-loader cnpm i style-loader css-loader -D
 
 
 

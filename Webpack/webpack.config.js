@@ -1,6 +1,7 @@
 // node引入模块的方式
 const path = require("path");
 module.exports = {
+    mode:"development",
     // 入口文件 
     entry:"./src/index.js",
     // 出口文件 打包到哪
@@ -21,6 +22,13 @@ module.exports = {
                         name:'[name].[ext]'
                     }
                 }
+            },
+            {
+                test:/\.css$/,
+                use:[ //loader的执行顺序从后向前
+                    "style-loader",
+                    "css-loader"
+                ]
             }
         ]
     }
