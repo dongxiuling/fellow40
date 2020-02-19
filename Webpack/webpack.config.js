@@ -35,6 +35,7 @@ module.exports = {
                 use:[ //loader的执行顺序从后向前
                     "style-loader",
                     "css-loader",
+                    "postcss-loader",
                     "sass-loader"
                 ]
             }
