@@ -50,7 +50,12 @@ module.exports = {
         }),
         // 打包之前先将dist目录删除
         new CleanWebpackPlugin()
-    ]
+    ],
+    devServer:{
+        contentBase:path.resolve(__dirname,"dist"),
+        host:'localhost',
+        // port:
+    }
 }
 
 
