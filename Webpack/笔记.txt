@@ -19,3 +19,13 @@ style-loader css-loader cnpm i style-loader css-loader -D
 
 大家下载我的代码 ，没有node_modules文件夹 ，自己手动下载
 cnpm install 会根据你项目根目录下package.json文件中的devDependencies中依赖项去下载
+
+
+Plugin插件  
+1.  html-webpack-plugin 
+cnpm i html-webpack-plugin -D下载 
+在webpack.config.js中引入 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+plugins:[]使用 
+
