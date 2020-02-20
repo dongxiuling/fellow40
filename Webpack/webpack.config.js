@@ -40,6 +40,14 @@ module.exports = {
                     "postcss-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test:/\.js$/,
+                loader: "babel-loader",
+                options:{
+                    presets:["@babel/preset-env"]
+                },
+                exclude: /node_modules/
             }
         ]
     },
@@ -54,6 +62,7 @@ module.exports = {
     devServer:{
         contentBase:path.resolve(__dirname,"dist"),
         host:'localhost',
+        open:true
         // port:
     }
 }
