@@ -1,13 +1,14 @@
 // node引入模块的方式
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
     mode:"development", //development|production
     // 入口文件 
     entry:"./src/index.js",
     // 出口文件 打包到哪
     output:{
-        filename:"bundle.js",
+        filename:"main.js",
         // path是绝对路径 
         path:path.resolve(__dirname,"dist")
     },
@@ -43,8 +44,13 @@ module.exports = {
         ]
     },
     plugins:[
+        // template中的src/indx.html作为模板生成dist目录，并把打包生成的js注入到html中
         new HtmlWebpackPlugin({
             template:"./src/index.html"
-        })
+        }),
+        // 打包之前先将dist目录删除
+        new CleanWebpackPlugin()
     ]
 }
+
+
