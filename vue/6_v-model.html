@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 双向 表单元素 页面变化的时候 数据变化 -->
+        <h2>{{msg}}</h2>
+        <input type="text" v-model="msg">
+        
+        <div>
+            <input type="radio" v-model="sex" value="1">男
+            <input type="radio" v-model="sex" value="0">女
+            <p>性别：</p>
+        </div>
+        <div>
+            <input type="checkbox" v-model="hobby" value="吃饭">吃饭
+            <input type="checkbox" v-model="hobby" value="睡觉">睡觉
+            <input type="checkbox" v-model="hobby" value="敲代码">敲代码
+            <p>性别：</p>
+        </div>
+        <div>
+            <select v-model="school">
+                <option value="黑大">黑大</option>
+                <option value="理工">理工</option>
+                <option value="林大">林大</option>
+                <option value="唯创">唯创</option>
+            </select>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"哈哈",
+                sex:"0",
+                hobby:["吃饭"],
+                school:"唯创"
+            }
+        })
+    
+    
+    </script>
+    
+</body>
+</html>
