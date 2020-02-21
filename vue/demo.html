@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="name" @keyup="filterFn()">
+        <button @click="add()">add</button>
+        <ul>
+            <!-- <li v-for="(obj,index) in list" @click="change(index)" :class="{red:obj.isRed}">{{obj.name}}<button>del</button></li> -->
+            <li v-for="(obj,index) in list" @click="change(obj)" :class="{red:obj.isRed}" v-show="obj.isShow">
+                {{obj.name}}
+                <button @click.stop="del(index)">del</button>
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {
+                        name:'aaa',
+                        isRed:false,
+                        isShow:true
+                    },{
+                        name:'bbb',
+                        isRed:false,
+                        isShow:true
+                    }
+                ],
+                name:''
+                // isRed:false
+            },
+            methods:{
+                add(){
+                    //1. 获取input的value   this.name
+                    this.list.push({name:this.name,isRed:false,isShow:true});
+                    // 添加后将input的value制空
+                    this.name = "";
+                    this.filterFn();
+                },
+                change(obj){
+                    // 点击的li的isRed = !isRed;
+                    obj.isRed = !obj.isRed;
+                },
+                del(index){
+                    // 索引 删除个数 添加
+                    this.list.splice(index,1);
+                },
+                filterFn(){
+                    // 取到input的 value
+                    // this.name
+                    // 找到包含value显示 其他隐藏
+                    let value = this.name;
+                    this.list.forEach(function(obj,index){
+                        if(obj.name.includes(value)){ //包含
+                            obj.isShow = true; // 显示
+                        }else{//不包含
+                            obj.isShow = false; //隐藏
+                        }
+                    })
+                }
+            }
+        })
+    
+    
+    
+    </script>
+    
+</body>
+</html>
