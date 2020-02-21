@@ -20,7 +20,10 @@
             <li v-for="(obj,index) in list" 
                 @click="fn(obj)"
                 :class="{red:obj.isChecked}"
-            >{{obj.name}}</li>
+            >
+                {{obj.name}}
+                <button @click.stop="remove(index)">del</button>
+            </li>
         </ul>
     </div>
     <script src="vue.js"></script>
@@ -51,6 +54,11 @@
                 fn(obj){
                     // console.log(obj)
                     obj.isChecked = !obj.isChecked;
+                },
+                remove(index){
+                    // console.log(index)
+                    // index  howmany  替换元素
+                    this.list.splice(index,1);
                 }
             }
         })
