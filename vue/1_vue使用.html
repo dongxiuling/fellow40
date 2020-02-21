@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        {{msg}}
+        {{a}}
+        <hr>
+        <ul>   
+            <!-- v-for循环 -->
+            <li v-for="val in arr">{{val}}</li>
+        </ul>
+    </div>
+    <div>
+        
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            // 挂载元素
+            el:"#root",
+            // 数据
+            data:{
+                msg:'hello world',
+                a:'11111',
+                arr:["张三","李四","王五","赵六"]
+            }
+        })
+    
+    
+    
+    </script>
+    
+</body>
+</html>

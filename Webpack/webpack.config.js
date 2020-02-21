@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const webpack  = require('webpack');
 const output = require("./webpack.output.js");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode:"development", //development|production
     // 入口文件 
@@ -56,7 +57,11 @@ module.exports = {
         }),
         // 打包之前先将dist目录删除
         new CleanWebpackPlugin(),
-        new webpack.BannerPlugin("唯创所有")
+        new webpack.BannerPlugin("唯创所有"),
+        new CopyWebpackPlugin([{
+            from:"./note.txt",
+            to:'./public'
+        }])
     ],
     devServer:{
         contentBase:path.resolve(__dirname,"dist"),
