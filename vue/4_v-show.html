@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- 
+        v-show 控制元素的display :none  频繁切换
+        v-if 不是频繁
+     -->
+    <div id="app">
+        <button @click="fn()">click</button>
+        <!-- <div class="div1" v-show="isShow"></div> -->
+        <div class="div1" v-if="isShow">11</div>
+        <div class="div2" v-else>22</div>
+
+        <ul>
+            <li v-if="type =='A'">1</li>
+            <li v-else-if="type == 'B'">2</li>
+            <li v-else-if="type == 'C'">3</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isShow:true,
+                type:"C"
+            },
+            methods:{
+                fn(){
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>
