@@ -10,14 +10,16 @@
     <div id="root">
         {{msg}}
         {{a}}
+        <span v-html="msg"></span>
         <hr>
         <ul>   
             <!-- v-for循环 -->
             <li v-for="val in arr">{{val}}</li>
         </ul>
+        <!-- <button v-on:click="fn()">click</button> -->
+        <button @click="fn($event)">click</button>
     </div>
     <div>
-        
     </div>
     <script src="vue.js"></script>
     <script>
@@ -26,9 +28,18 @@
             el:"#root",
             // 数据
             data:{
-                msg:'hello world',
+                msg:'<h2>hello world</h2>',
                 a:'11111',
                 arr:["张三","李四","王五","赵六"]
+            },
+            methods:{
+                fn(event){
+                    console.log(event);
+                    // 将数组arr中减少一个元素获取arr数组  this=>vm
+                    // console.log(this.arr);
+                    // this.arr.pop();
+                    this.msg = "哈哈哈哈哈哈哈哈哈哈"
+                }
             }
         })
     
