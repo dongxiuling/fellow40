@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="myValue">
+        <button @click="add()">add</button>
+        <ul>
+            <!-- 样式 如果obj.isChecked == true red 否则  -->
+            <li v-for="(obj,index) in list" 
+                @click="fn(obj)"
+                :class="{red:obj.isChecked}"
+            >{{obj.name}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {
+                        name:"吃饭",
+                        isChecked:false
+                    },
+                    {
+                        name:"睡觉",
+                        isChecked:false
+                    }
+                ],
+                myValue:""
+            },
+            methods:{
+                add(){
+                    // 在list数组中增加一条  input的value
+                    this.list.push({
+                        name:this.myValue,
+                        isChecked:false
+                    });
+                },
+                fn(obj){
+                    // console.log(obj)
+                    obj.isChecked = !obj.isChecked;
+                }
+            }
+        })
+    
+    </script>
+    
+</body>
+</html>
