@@ -89,7 +89,7 @@
                     // 获取输入框的name 和price 添加到list数组中
                     this.list.push({
                         name:this.proName,
-                        price:this.proPrice,
+                        price:Number.parseFloat(this.proPrice),
                         isActive:false
                     })
                     this.proName = "";
