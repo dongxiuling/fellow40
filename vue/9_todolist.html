@@ -41,7 +41,7 @@
             <button @click="add()">添加</button>
         </div>
         <div>
-            <input type="text" v-model="searchValue" placeholder="请输入搜索内容">
+            <input type="text" v-model="searchValue" placeholder="请输入搜索内容" @keyup="search()">
             <button @click="search()">搜索</button>
         </div>
         <ul>
