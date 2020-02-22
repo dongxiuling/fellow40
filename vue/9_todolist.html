@@ -44,8 +44,12 @@
             <input type="text"><button>搜索</button>
         </div>
         <ul>
-            <li v-for="(obj,index) in list">
-                <input type="checkbox">
+            <li v-for="(obj,index) in list" 
+                @click="change(obj)"
+                :class="{active:obj.isActive}"
+            >   
+                <!-- 如果你的isActive是true 复选框勾上  -->
+                <input type="checkbox" v-model="obj.isActive">
                 <span>{{obj.name}}</span>
                 <div class="right">
                     <span>{{obj.price}}</span>
@@ -55,7 +59,7 @@
         </ul>
         <div>
             <button>删除</button>
-            <span>总价888</span>
+            <span>总价{{totle()}}</span>
         </div>
     </div>
 
@@ -68,11 +72,13 @@
                 list:[
                     {
                         name:'苹果',
-                        price:'5'
+                        price:5,
+                        isActive:false
                     },
                     {
                         name:'apple11',
-                        price:6666
+                        price:6666,
+                        isActive:false
                     }
                 ],
                 proName:"",
@@ -83,11 +89,24 @@
                     // 获取输入框的name 和price 添加到list数组中
                     this.list.push({
                         name:this.proName,
-                        price:this.proPrice
+                        price:this.proPrice,
+                        isActive:false
                     })
                     this.proName = "";
                     this.proPrice = "";
-
+                },
+                change(obj){
+                    obj.isActive = !obj.isActive;
+                },
+                totle(){
+                    let sum = 0;
+                    // 计算list中所有被勾选的价格和
+                    this.list.forEach(function(obj){
+                        if(obj.isActive){
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
                 }
             }
         })
