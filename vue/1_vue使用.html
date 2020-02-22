@@ -14,7 +14,7 @@
         <hr>
         <ul>   
             <!-- v-for循环 -->
-            <li v-for="val in arr">{{val}}</li>
+            <li v-for="(val,index) in arr">{{val}}</li>
         </ul>
         <!-- <button v-on:click="fn()">click</button> -->
         <button @click="fn($event)">click</button>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+
+        }
+        .b{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- display: none; -->
+        <div v-show="isShow">hhhh</div>
+        <div v-if="b">22222</div>
+        <div v-else>333</div>
+
+        <h2 :id="myId"></h2>
+        <!-- <h3 :class="{a:isA,b:isB}"></h3> -->
+        <h3 :class="[classA,classB]"></h3>
+
+        
+
+        <button @click.stop="fn(1)">click</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                isShow:false,
+                b:true,
+                myId:'aa',
+                isA:true,
+                isB:false,
+                classA:'a',
+                classB:'b'
+            },
+            methods:{
+                fn(num){
+                    console.log(num,event)
+                    // evevt.stop
+                }
+            }
+        })
+    
+    
+    
+    </script>
+    
+</body>
+</html>
