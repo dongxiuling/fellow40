@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{fisrtName}}</p>
+        <p> {{lastName}}</p>
+        <!-- <p>全称:{{fullName}}</p>
+        <p>全称:{{fullName}}</p>
+        <p>全称:{{fullName}}</p> -->
+        <button @click="change">click</button>
+       
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                fisrtName:'zhang',
+                lastName:'san',
+                fullName:'zhang san'
+            },
+            methods:{
+                change(){
+                    this.fullName = "li si" //设置fullName ->set
+                }
+            },
+            // 计算属性 有缓存功能
+            computed:{
+                fullName(){
+                    return this.fisrtName +" "+ this.lastName;
+                },
+
+                // fullName:{
+                //     get:function(){ //获取操作
+                //         return this.fisrtName +" "+this.lastName;
+                //     },
+                //     set:function(newValue){ //设置fullName值
+                //        console.log( newValue );//"li san"
+                //        var arr = newValue.split(" ");
+                //     //    console.log(arr);
+                //        this.fisrtName = arr[0];
+                //        this.lastName = arr[1];
+                //     }
+                // },   
+            // },
+            watch:{
+                // 检测一个值  fisrtName发生变化的时候
+                fisrtName:function(newVal,oldVal){
+                    // console.log(newVal,oldVal)
+                    this.fullName = newVal + this.lastName;
+                },
+                // lastName:function(newVal,oldVal){
+                //     this.fullName = this.fisrtName + newVal;
+                // }
+            }
+       
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -61,7 +61,7 @@
         </ul>
         <div>
             <button @click="delAll()">删除选中</button>
-            <span>总价{{totle()}}</span>
+            <span>总价{{zonjia}}</span>
         </div>
     </div>
     <script src="vue.js"></script>
@@ -137,6 +137,19 @@
                             obj.isInclude = false; 
                         }
                     })
+                }
+            }
+            ,
+            computed:{
+                zonjia(){
+                    let sum = 0;
+                    // 计算list中所有被勾选的价格和
+                    this.list.forEach(function(obj){
+                        if(obj.isActive){
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
                 }
             }
         })
