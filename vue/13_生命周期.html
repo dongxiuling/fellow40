@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <button @click="fn">click</button>
+        <button @click="des">destory</button>
+    </div>
+    <!-- 钩子函数 -->
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                msg:"haha"
+            },
+            // 组件实例刚被创建 组件属性计算之前 如data属性 
+            beforeCreate(){
+                // console.log(this.msg)
+                console.log(this.$el, this.$data);  //undefined undefined
+            },
+            // 组件实例创建完成 属性已绑定，但$el还没有
+            created(){
+                console.log(this.$el, this.$data); 
+            },
+            // 挂载之前 $el已经存在 但是msg还没有挂载上
+            beforeMount(){
+                console.log(this.$el, this.$data); 
+            },
+            // 挂载之后  msg还已经挂载上
+            mounted(){
+                console.log(this.$el, this.$data); 
+            },
+            // 组件更新之前
+            beforeUpdate(){
+                // console.log(document.getElementById("app"), this.$data); 
+                console.log("组件更新之前");
+            },
+            // 组件更新之后
+            updated(){
+                // console.log(document.getElementById("app"), this.$data); 
+                console.log("组件更新之后");
+            },
+            beforeDestroy(){
+                console.log('beforeDestory')
+            },  
+            destroyed(){
+                console.log('destory')
+            },
+            methods:{
+                fn(){
+                    this.msg = "hehehe";
+                },
+                des(){
+                    vm.$destroy();
+                }
+            }
+        })
+    
+    </script>
+
+</body>
+</html>
