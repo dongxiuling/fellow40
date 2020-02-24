@@ -39,12 +39,12 @@
             },
             // 组件更新之前
             beforeUpdate(){
-                // console.log(document.getElementById("app"), this.$data); 
+                console.log(document.getElementById("app").innerHTML, this.$data); 
                 console.log("组件更新之前");
             },
             // 组件更新之后
             updated(){
-                // console.log(document.getElementById("app"), this.$data); 
+                console.log(document.getElementById("app").innerHTML, this.$data); 
                 console.log("组件更新之后");
             },
             beforeDestroy(){

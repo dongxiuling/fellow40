@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <hello></hello>
+        <!-- <hello></hello>
+        <hello></hello> -->
+    </div>
+    <hr>
+    <div id="app2">
+        <hello></hello>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("hello",{
+            template:"<div><h1>哈哈哈</h1><p>haehheheheh</p></div>"
+        })
+    
+        new Vue({
+            el:"#app"
+        })
+        new Vue({
+            el:"#app2"
+        })
+    
+    </script>
+</body>
+</html>

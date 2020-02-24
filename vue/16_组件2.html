@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 父组件 -->
+    <div id="app">
+        <!-- 父组件向子组件串子 -->
+        <hello title="标题1" content="内容1"></hello>
+        <hello title="标题2" content="内容2"></hello>
+    </div>
+    <div id="app2">
+        <!-- <hello></hello> -->
+    </div>
+    <!-- 子组件 -->
+    <template id="temp">
+        <div>
+            <h2>标题是：{{title}}</h2>
+            <hr>
+            <p>内容是：{{content}}</p>
+        </div>
+    </template>
+
+    <script src="vue.js"></script>
+    <script>
+        // 局部组件
+        new Vue({
+            el:"#app",
+            components:{
+                "hello":{
+                    template:"#temp",
+                    props:["title","content"]
+                }
+            }
+        })
+
+        new Vue({
+            el:"#app2"
+        })
+    
+        
+    </script>
+</body>
+</html>

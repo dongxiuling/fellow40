@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- <div v-for="obj in arr">
+            <h2>{{obj.name}}</h2>
+            <p>{{obj.desc}}</p>
+        </div> -->
+        <template v-for="obj in arr">
+            <h2>{{obj.name}}</h2>
+            <p>{{obj.desc}}</p>
+        </template>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[{
+                    name:'zs',
+                    desc:"hahajdlajlj"
+                },{
+                    name:'lisi',
+                    desc:"hjkn"
+                },{
+                    name:'wangwu',
+                    desc:"aaaaaa"
+                },{
+                    name:'zhaoliu',
+                    desc:"vvvvvv"
+                }]
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>
