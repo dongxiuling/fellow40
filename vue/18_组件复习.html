@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <hello title="hahah">
+            <img src="../images/1.jpg" alt="">
+            <h5>wedrftgyuiol;p</h5>
+        </hello>
+        <hello :title="title"></hello>
+    </div>
+                
+    <template id="temp">
+        <div>
+           
+            <h2 @click="change">{{title}}</h2>
+            <hr>
+            <p>sdrftgyuhijokpl;';lkjhgdfhjkl</p>
+            <slot></slot>
+        </div>
+    </template>
+
+
+    <script src="vue.js"></script>
+    <script>
+        // Vue.component("hello",{
+        //     template:"<h2>sdfghj</h2>"
+        // })
+
+        new Vue({
+            el:"#app",
+            data:{
+                title:'标题2'
+            },
+            components:{
+                "hello":{
+                    template:"#temp",
+                    props:["title"],
+                    data:function(){
+                        return {
+                            xx:'hhhh'
+                        }
+                    },
+                    methods:{
+                        change(){
+                            this.xx = "1234567890";
+                            console.log(this.title);
+                            // this.title = "sdfghjkl;"
+                        }
+                    }
+                }
+            }
+        })
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

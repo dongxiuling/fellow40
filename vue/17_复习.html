@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        v-for 
+        v-if v-show
+        v-on:click @click
+        v-bind:id  :id="" => 动态属性
+        v-model 双向数据绑定 
+        v-html  v-text
+
+        通过索引修改的时候 不生效 -> Vue.set(this.arr,1,'aaa');
+        computed 计算属性 有缓存功能 除非它依赖的值发生了变化，才会重新计算
+
+
+
+     -->
+     <div id="app">
+         {{total}}
+         {{total}}
+         {{total}}
+        {{all()}}
+        {{all()}}
+     </div>
+     <script src="vue.js"></script>
+     <script>
+         new Vue({
+             el:"#app",
+             data:{
+                 num:20,
+                 num1:10
+             },
+             computed:{
+                 total(){
+                     return this.num+this.num1*2;
+                 }
+             },
+            //  watch:{
+            //     num:function(){
+
+            //     }
+            //  },
+             methods:{
+                all(){
+                     return this.num+this.num1*2;
+                 }
+             }
+
+         })
+     
+     
+     
+     </script>
+
+</body>
+</html>
