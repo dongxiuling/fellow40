@@ -31,7 +31,7 @@
     <div id="app">
         <button @click="login()">登陆</button>
         <button @click="register()">注册</button>
-        <my-dialog v-if="loginShow" title="登陆">
+        <my-dialog v-if="loginShow" title="登陆" @close="fn" >
             <div>
                 用户名：<input type="text">
             </div>
@@ -40,7 +40,7 @@
             </div>
             <button>登陆</button>
         </my-dialog>
-        <my-dialog v-if="registerShow" title="注册">
+        <my-dialog v-if="registerShow" title="注册" @close="fn">
             <div>
                 用户名：<input type="text">
             </div>
@@ -58,13 +58,16 @@
             <!-- 标题 -->
             <div class="dialog-title">
                 {{title}}
-                <span class="close">X</span>
+                <span class="close" @click="$emit('close',title)">X</span>
             </div>
             <div class="dialog-content">
                 <slot></slot>
             </div>
         </div>
     </template>
+    <!-- 组件传值  父到子 props 
+        子到父  $emit
+     -->
     <script src="vue.js"></script>
     <script>
         new Vue({
@@ -87,6 +90,9 @@
                 register(){
                     this.registerShow = true;
                     this.loginShow = false;
+                },
+                fn(title){
+                    console.log(title);
                 }
             }
 
