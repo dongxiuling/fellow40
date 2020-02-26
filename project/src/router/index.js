@@ -23,7 +23,12 @@ const routes = [
     component:Detail
   },{
     path:"/test",
-    component:Test
+    component:Test,
+    alias:'/abc'
+  },
+  ,{
+    path:"/",
+    redirect:'/home'
   }
   
   
