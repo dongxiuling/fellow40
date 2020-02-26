@@ -11,7 +11,9 @@
       <router-link to="/detail/25/xx">详情页</router-link> | 
       <router-link to="/abc">abc</router-link> |
       <!--占位  -->
-      <router-view/>
+      <transition name="fade">
+        <router-view/>
+      </transition>
   </div>
 </template>
 <script>
@@ -48,5 +50,27 @@
       color: #42b983;
     }
   }
+}
+
+.fade-enter{
+  // opacity: 0;
+  transform: translate(100%);
+}
+.fade-enter-active{
+  // transition:opacity 1s ease ;
+  transition:transform 1s ease ;
+}
+.fade-enter-to{
+  // opacity: 1;
+  transform: translate(0)
+}
+.fade-leave{
+  opacity: 1;
+}
+.fade-leave-active{
+  transition:opacity 1s linear;
+}
+.fade-leave-to{
+  opacity: 0;
 }
 </style>

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Detail from './../views/Detail.vue';
 import Test from './../views/Test.vue';
 import A from './../views/A';
+import Error from './../views/Error'
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,9 @@ const routes = [
   ,{
     path:"/",
     redirect:'/home'
+  },{
+    path:'*',
+    component:Error
   }
   
   
