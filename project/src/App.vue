@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-      <common-header></common-header>
-      <home></home>
-      <common-footer></common-footer>
+      <!-- <common-header></common-header> -->
+      <!-- <home></home> -->
+      <!-- <common-footer></common-footer> -->
+
+      <router-link to="/home">首页</router-link> | 
+      <router-link to="/detail">详情页</router-link> | 
+      <router-link to="/test">测试页</router-link> |
+      <!--占位  -->
+      <router-view/>
   </div>
 </template>
 <script>
@@ -24,7 +30,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 

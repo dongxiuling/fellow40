@@ -1,13 +1,12 @@
 <template>
     <div>
-        我是首页
+Test
     </div>
 </template>
 
 <script>
     export default {
         
-
     }
 </script>
 

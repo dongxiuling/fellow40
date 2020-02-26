@@ -1,13 +1,12 @@
 <template>
     <div>
-        我是首页
+        我是详情页
     </div>
 </template>
 
 <script>
     export default {
         
-
     }
 </script>
 
