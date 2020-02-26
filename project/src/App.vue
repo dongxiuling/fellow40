@@ -7,13 +7,16 @@
       <router-link to="/home">首页</router-link> | 
       <!-- <router-link to="/detail">详情页</router-link> |  -->
       <!-- <router-link :to="{name:'detail', params:{id:25,name:'xx'}}">详情页</router-link> |  -->
-      <!-- <router-link :to="{path:'/detail', query:{id:25,name:'xx'}}">详情页</router-link> |  -->
-      <router-link to="/detail/25/xx">详情页</router-link> | 
+      <router-link :to="{path:'/detail', query:{id:25,name:'xx'}}">详情页</router-link> | 
+      <!-- <router-link to="/detail/25/xx">详情页</router-link> |  -->
       <router-link to="/abc">abc</router-link> |
+      <button @click="fn">click</button>
       <!--占位  -->
       <transition name="fade">
         <router-view/>
       </transition>
+
+
   </div>
 </template>
 <script>
@@ -22,6 +25,20 @@
     import CommonFooter from './components/CommonFooter';
     import Home from './views/Home'
     export default {
+        data(){
+          return {
+
+          }
+        },
+        methods:{
+          fn(){
+            // 
+            // this.$router.push('/home');
+            // this.$router.push({path:'/detail', query:{id:25,name:'xx'}});
+            this.$router.go(-1); //后退一步  相当于history.back(); 
+            this.$router.go(1); //前进一步  相当于history.forward();
+          }
+        },
         components:{
           CommonHeader,
           CommonFooter,

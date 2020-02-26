@@ -19,9 +19,13 @@ const routes = [
       }
     ]
   },{
-    path:"/detail/:id/:name",
+    path:"/detail",
     name:"detail",
-    component:Detail
+    component:Detail,
+    // beforeEnter(to,from,next){
+    //   console.log(to,from,next);
+    //   next(false);
+    // }
   },{
     path:"/test",
     component:Test,
@@ -39,7 +43,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes,
 });
