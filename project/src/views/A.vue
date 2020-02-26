@@ -1,15 +1,12 @@
 <template>
     <div>
-        我是首页
-        <router-link to="/home/a">A</router-link>
-        <router-view></router-view>
+子页面A
     </div>
 </template>
 
 <script>
     export default {
         
-
     }
 </script>
 

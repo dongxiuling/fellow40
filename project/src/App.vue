@@ -5,7 +5,10 @@
       <!-- <common-footer></common-footer> -->
 
       <router-link to="/home">首页</router-link> | 
-      <router-link to="/detail">详情页</router-link> | 
+      <!-- <router-link to="/detail">详情页</router-link> |  -->
+      <!-- <router-link :to="{name:'detail', params:{id:25,name:'xx'}}">详情页</router-link> |  -->
+      <!-- <router-link :to="{path:'/detail', query:{id:25,name:'xx'}}">详情页</router-link> |  -->
+      <router-link to="/detail/25/xx">详情页</router-link> | 
       <router-link to="/test">测试页</router-link> |
       <!--占位  -->
       <router-view/>
