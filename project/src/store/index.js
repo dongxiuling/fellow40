@@ -13,9 +13,24 @@ export default new Vuex.Store({
   mutations: {
     add(state,x){
       state.count+=x;
+    },
+    reduce(state){
+      state.count--;
+    }
+  },
+  getters:{
+    xx:function(state){
+      return state.count*2 + state.num;
     }
   },
   actions: {
+    addAction({commit}){
+      // 异步操作。。。。
+      // 调用mutations
+      setTimeout(function(){
+        commit('add',10);
+      },1000)
+    }
   },
   modules: {
   }
