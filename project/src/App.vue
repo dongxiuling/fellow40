@@ -10,6 +10,7 @@
       <router-link :to="{path:'/detail', query:{id:25,name:'xx'}}">详情页</router-link> | 
       <!-- <router-link to="/detail/25/xx">详情页</router-link> |  -->
       <router-link to="/abc">abc</router-link> |
+      <router-link to="/test1">test1</router-link> |
       <button @click="fn">click</button>
       <!--占位  -->
       <transition name="fade">

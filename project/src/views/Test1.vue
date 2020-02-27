@@ -1,16 +1,16 @@
 <template>
     <div>
-        我是首页
+        <!-- $store.commit('')触发mutations中的方法 -->
+        <button @click="$store.commit('add',5)">count add</button>
         {{$store.state.count}}
-        <router-link to="/home/a">A</router-link>
-        <router-view></router-view>
+        {{$store.state.num}}
     </div>
 </template>
 
 <script>
     export default {
         
-
+       
     }
 </script>
 
