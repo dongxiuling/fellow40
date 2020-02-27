@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+
 export default new Vuex.Store({
   // 用来存储状态
   state: {
@@ -28,10 +29,12 @@ export default new Vuex.Store({
       // 异步操作。。。。
       // 调用mutations
       setTimeout(function(){
-        commit('add',10);
-      },1000)
+        commit('add',10);//通过commit触发mutations中的add方法
+      },1000);
+      // conso
     }
   },
   modules: {
   }
 })
+
