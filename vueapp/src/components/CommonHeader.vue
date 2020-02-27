@@ -1,6 +1,6 @@
 <template>
-    <header>
-        header
+    <header :style="{background:$store.state.color}">
+       {{$store.state.title}}
     </header>
 </template>
 
