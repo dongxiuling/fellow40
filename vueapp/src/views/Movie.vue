@@ -5,10 +5,14 @@
                 <img :src="obj.images.medium" alt="">
                 <div class="desc-box">
                     <h3>{{obj.original_title}}</h3>
-                    <div>肖央|</div>
+                    <div>
+                        <span v-for="cast in obj.casts" :key="cast.id">{{cast.name}}|</span>
+                    </div>
                     <p>207147已观看</p>
                     <p>年份：2019</p>
-                    <p>剧情</p>
+                    <p>
+                        <span v-for="(genre,index) in obj.genres" :key="index">{{genre}}</span>
+                    </p>
                 </div>
             </li>
             
