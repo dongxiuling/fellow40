@@ -1,7 +1,11 @@
 <template>
     <div>
         <ul class="list-box">
-            <li class="list" v-for="obj in movieList" :key="obj.id">
+            <li class="list" 
+                v-for="obj in movieList" 
+                :key="obj.id"
+                @click="goDetail(obj.id)"
+            >
                 <img :src="obj.images.medium" alt="">
                 <div class="desc-box">
                     <h3>{{obj.original_title}}</h3>
@@ -28,10 +32,16 @@
                 movieList:[]
             }
         },
+        methods:{
+            goDetail(id){
+                this.$router.push({path:'/movie-detail',query:{id}})
+                // this.$router.push('/movie-detail/111')
+            }
+        },
         // 通过ajax请求数据  
         /**
          * 跨域 
-         * 浏览器为了安全起见 -域名 协议 端口号 只要有一个不同的跨域
+         * 浏览器为了安全起见同源策略  -域名 协议 端口号 只要有一个不同的跨域
          * 
          * 解决方式  jsonbird
          * https://bird.ioliu.cn/v1?url=xx
@@ -39,7 +49,7 @@
         created(){
             axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10')
             .then((res)=>{
-                // console.log(res)
+                // console.log(res.data)
                 this.movieList = res.data.subjects;
             }).catch((res)=>{
                 console.log(res)
