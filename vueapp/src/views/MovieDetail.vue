@@ -21,8 +21,8 @@ export default {
   data() {
     return {
       movie: {},
-      isSHow: true,
-      showMoive:false
+      isSHow: true, //loding图片显示隐藏 true显示|false隐藏
+      showMoive:false //控制电影显示隐藏 false隐藏| true显示
     };
   },
   // https://api.douban.com/v2/movie/subject/26942674
