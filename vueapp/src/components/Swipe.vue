@@ -29,7 +29,7 @@
                 iNow:0//记录当前显示的索引
             }
         },
-        props:["imgs"],
+        props:["imgs","a"],
         created(){
             setInterval(()=>{
                 this.iNow++;
