@@ -50,7 +50,9 @@
             // 取到页面的路由的path 判断path和menu菜单中哪个obj对象是对应的 change(obj)
             // console.log(this.$route.path)
             this.menu.forEach((obj,index)=>{
-                if(obj.path == this.$route.path){
+                // 判断 route.path 包含path就可以 例如：/music-detail 包含 /music
+                if(this.$route.path.includes(obj.path)){
+                // if(this.$route.path == obj.path){
                     // 判断路径跟menu中哪个是匹配的 ，修改color title
                     this.$store.commit('change',obj);
                 }
