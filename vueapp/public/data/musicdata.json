@@ -1,33 +1,64 @@
 {
   "musicData": [{
-    "title": "我要你",
-    "author": "老狼",
-    "src": "http://up.mcyt.net/down/43422.mp3",
-    "musicImgSrc": "http://omratag7g.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.jpg",
+    "title": "平凡之路",
+    "artist": "朴树",
+    "src": "http://m10.music.126.net/20200301000351/2ef2bc30fd678345e9159b5c8a4b9f36/ymusic/fc6d/0a5c/db75/2b16355237283456b93e133c2d8ad6ef.mp3",
+    "pic": "http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg",
     "lrc": "lrc/我要你.lrc"
   }, {
-    "title": "广东爱情故事",
-    "author": "广东雨神",
-    "src": "http://sc1.111ttt.cn/2018/1/03/13/396131203208.mp3",
-    "musicImgSrc": "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3283023278,2758205127&fm=58&bpow=1824&bpoh=1824",
+    "title": "因为爱情",
+    "artist": "陈奕迅",
+    "src": "http://m10.music.126.net/20200301000818/cb16596d456d9c731a0856c678fd24f1/ymusic/61f8/acca/ae45/098caa71f39e824afb2e899e39d5c4eb.mp3",
+    "pic": "http://p1.music.126.net/GGYQjJ-zDEivv9l6QgJUFg==/109951163020567917.jpg",
     "lrc": "lrc/广东爱情故事.lrc"
   }, {
-    "title": "就是爱你",
-    "author": "陶喆",
-    "src": "http://up.mcyt.net/md5/53/MTAzMTM1_Qq4329912.mp3",
-    "musicImgSrc": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1407964657,2382644691&fm=58",
+    "title": "成都",
+    "artist": "赵雷",
+    "src": "http://m10.music.126.net/20200301001512/ef79d1346546f28999b4700b637852fe/ymusic/fa90/df9c/59f7/95c4a2802e0b9191ae1a048f127e53c5.mp3",
+    "pic": "http://p2.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
     "lrc": "lrc/就是爱你.lrc"
   }, {
-    "title": "最美的期待",
-    "author": "周笔畅",
-    "src": "http://sc1.111ttt.cn:8282/2018/1/03m/13/396131229550.m4a?tflag=1519095601&pin=6cd414115fdb9a950d827487b16b5f97#.mp3",
-    "musicImgSrc": "http://singerimg.kugou.com/uploadpic/softhead/400/20180718/20180718110356316.jpg",
+    "title": "海阔天空",
+    "artist": "Beyond",
+    "src": "http://m10.music.126.net/20200301002801/5112efffc3818e8b88a74e36a5352e94/ymusic/b1c4/b5de/74d0/9158ae4873e10b743790320db9ef9b29.mp3",
+    "pic": "http://p1.music.126.net/QHw-RuMwfQkmgtiyRpGs0Q==/102254581395219.jpg",
     "lrc": "lrc/最美的期待.lrc"
   }, {
-    "title": "追光者",
-    "author": "岑宁儿",
-    "src": "http://sc1.111ttt.cn/2017/1/11/11/304112002347.mp3",
-    "musicImgSrc": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2556611937,1195664541&fm=58&bpow=2000&bpoh=2000",
+    "title": "边走边唱",
+    "artist": "李荣浩",
+    "src": "http://m10.music.126.net/20200301002039/514cf6e5c9878ba8a4c9b1292c781daf/ymusic/a780/cfae/d9a5/178d6c0b327f8b50149f072d1015d7f1.mp3",
+    "pic": "http://p2.music.126.net/4Pu7M0q88fVVoo1ZFS_nmw==/3408486047237011.jpg",
+    "lrc": "lrc/追光者.lrc"
+  },
+  {
+    "title": "平凡之路",
+    "artist": "朴树",
+    "src": "http://m10.music.126.net/20200301000351/2ef2bc30fd678345e9159b5c8a4b9f36/ymusic/fc6d/0a5c/db75/2b16355237283456b93e133c2d8ad6ef.mp3",
+    "pic": "http://p2.music.126.net/W_5XiCv3rGS1-J7EXpHSCQ==/18885211718782327.jpg",
+    "lrc": "lrc/我要你.lrc"
+  }, {
+    "title": "因为爱情",
+    "artist": "陈奕迅",
+    "src": "http://m10.music.126.net/20200301000818/cb16596d456d9c731a0856c678fd24f1/ymusic/61f8/acca/ae45/098caa71f39e824afb2e899e39d5c4eb.mp3",
+    "pic": "http://p1.music.126.net/GGYQjJ-zDEivv9l6QgJUFg==/109951163020567917.jpg",
+    "lrc": "lrc/广东爱情故事.lrc"
+  }, {
+    "title": "成都",
+    "artist": "赵雷",
+    "src": "http://m10.music.126.net/20200301001512/ef79d1346546f28999b4700b637852fe/ymusic/fa90/df9c/59f7/95c4a2802e0b9191ae1a048f127e53c5.mp3",
+    "pic": "http://p2.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
+    "lrc": "lrc/就是爱你.lrc"
+  }, {
+    "title": "海阔天空",
+    "artist": "Beyond",
+    "src": "http://m10.music.126.net/20200301002801/5112efffc3818e8b88a74e36a5352e94/ymusic/b1c4/b5de/74d0/9158ae4873e10b743790320db9ef9b29.mp3",
+    "pic": "http://p1.music.126.net/QHw-RuMwfQkmgtiyRpGs0Q==/102254581395219.jpg",
+    "lrc": "lrc/最美的期待.lrc"
+  }, {
+    "title": "边走边唱",
+    "artist": "李荣浩",
+    "src": "http://m10.music.126.net/20200301002039/514cf6e5c9878ba8a4c9b1292c781daf/ymusic/a780/cfae/d9a5/178d6c0b327f8b50149f072d1015d7f1.mp3",
+    "pic": "http://p2.music.126.net/4Pu7M0q88fVVoo1ZFS_nmw==/3408486047237011.jpg",
     "lrc": "lrc/追光者.lrc"
   }]
 }
