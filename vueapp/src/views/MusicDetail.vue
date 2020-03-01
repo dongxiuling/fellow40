@@ -11,7 +11,7 @@
                 lrc:'data/xxx.a.lrc'
             }"
             :list="musicList"
-            :showLrc= "true"
+            showLrc
         />
 
         
