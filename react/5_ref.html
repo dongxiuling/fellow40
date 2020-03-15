@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+       class Main extends React.Component{
+           constructor(){
+               super();
+               this.state = {
+
+               }
+               this.fn = this.fn.bind(this);
+           }
+           fn(){ //this-> undefined
+                // 获取到dom元素
+                // console.log(this.refs.username.value);
+                console.log(this.myInput.value)
+           }
+           render(){
+                return (
+                    <div>
+                        <h2>111</h2>
+                        {
+                            //    <input type="text" ref="username"/>
+                        }
+                        <input type="text" ref={input=>this.myInput = input} />
+                        <button onClick={this.fn}>click</button>
+                    </div>
+                )
+           }
+       }
+       ReactDOM.render(
+           <Main/>,
+           document.getElementById('root')
+       )
+
+  
+
+
+    </script>
+
+</body>
+
+</html>
