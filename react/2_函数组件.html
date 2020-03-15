@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+        /*
+            1 组件名首字母大写
+            2 只能有一个根元素 
+            3 所有标签必须闭合
+        */ 
+        const Hello = (props)=>{
+            return (
+                <div>
+                    <h2>hello !{props.name} -- {props.age}</h2>
+                    <p>hehe haha 嘻嘻 !</p>
+                    {props.children}
+                </div>
+            )
+        }
+        ReactDOM.render(
+            <Hello name="zhangsan" age="30">
+                <div>
+                    <h3>我是传值的内容</h3>    
+                    <h4>我是内容2</h4>
+                </div>
+            </Hello>,
+            document.getElementById('root')
+        )
+
+
+
+    </script>
+    
+</body>
+</html>
