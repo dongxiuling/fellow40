@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <script type="text/babel">
+    /*
+        Main->A父到子传值 props
+        A->Main 子到父 子组件中调用父组件的方法传值 
+    */
+       class Main extends React.Component{
+           constructor(){
+               super();
+               this.state = {
+                   num1:10,
+                   num2:20,
+                   msg:0//显示子组件回传过来的值 
+               }
+               this.fn = this.fn.bind(this);
+           }
+           //修改msg的值 
+           fn(num){
+               console.log(num);
+                // this.setState({
+                //     msg:num
+                // })
+           }
+           render(){
+               return (
+                   <div>
+                        <div>我是父组件 {this.state.msg}</div>
+                        <A num={this.state.num1}  fn={this.fn}></A>
+                        <A num={this.state.num2}  fn={this.fn}></A>
+                    </div>
+                );
+           }
+       }
+       class A extends React.Component{
+           render(){
+            //    console.log(this.props.fn);
+               return (
+                    <div>
+                        {this.props.num}
+                        <button onClick={()=>{
+                                this.props.fn(this.props.num)
+                            }
+                        }>click</button>
+                    </div>
+               )
+           }
+       }
+    
+       ReactDOM.render(
+           <Main/>,
+           document.getElementById('root')
+       )
+
+  
+
+
+    </script>
+
+</body>
+
+</html>
