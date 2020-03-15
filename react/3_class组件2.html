@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="root"></div>
     <script src="react.development.js"></script>
@@ -22,24 +24,32 @@
             1 定义state
             2 使用state   this.state.count 
             2 修改状态state  this.setSate({count:100})
-        */ 
-        class Hello extends React.Component{
-            constructor(){
+        */
+        class Hello extends React.Component {
+            constructor() {
                 super();
                 this.state = {
-                    count:1
+                    count: 1
                 }
+                this.fn = this.fn.bind(this);
             }
-            render(){
+            fn() {
+                console.log('fn被调用');
+                console.log(this); //undefined
+                this.setState({
+                    count: this.state.count + 2
+                });
+            }
+            render() {
                 return (
                     <div>
                         {this.state.count}
-                        <button onClick={()=>{
-                            // 修改state中的count+1
-                            this.setState({
-                                count:this.state.count+2
-                            });
-                        }}>count++</button>
+                        {
+                            /*
+                                <button onClick={this.fn.bind(this)}>count++</button>
+                            */    
+                        }
+                        <button onClick={this.fn}>count++</button>
                         <h2>hello! {this.props.name} == {this.props.age}</h2>
                         <p>哈哈哈哈</p>
                         {this.props.children}
@@ -50,7 +60,7 @@
         ReactDOM.render(
             <Hello name="zhangsan" age="30">
                 <div>
-                    <h3>我是传值的内容</h3>    
+                    <h3>我是传值的内容</h3>
                     <h4>我是内容2</h4>
                 </div>
             </Hello>,
@@ -58,8 +68,11 @@
         )
 
 
+  
+
 
     </script>
-    
+
 </body>
+
 </html>
