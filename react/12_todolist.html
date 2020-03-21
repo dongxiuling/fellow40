@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -15,14 +21,33 @@
             constructor(){
                 super()
                 this.state = {
-                    todos:['吃饭','睡觉','敲代码']
+                    todos:[
+                        {
+                            name:'吃饭',
+                            isActive:false//标识是否被点击| 是否有红色背景 true|false
+                        },{
+                            name:'睡觉',
+                            isActive:false
+                        },{
+                            name:'敲代码',
+                            isActive:false
+                        }]
                 }
                 this.addFn = this.addFn.bind(this);
+                this.changeColorFn = this.changeColorFn.bind(this);
             }
             addFn(val){
                 // console.log(val)
                 this.setState({
                     todos:[...this.state.todos,val]
+                })
+            }
+            changeColorFn(index){
+                // console.log(index);
+                let todos = [...this.state.todos];
+                todos[index].isActive = !todos[index].isActive;
+                this.setState({
+                    todos
                 })
             }
             render(){
@@ -31,7 +56,7 @@
                         <h3>todolist</h3>
                         <Search></Search>
                         <Add addFn={this.addFn}></Add>
-                        <List todos={this.state.todos}></List>
+                        <List todos={this.state.todos} changeColorFn={this.changeColorFn}></List>
                     </div>
                 )
             }
@@ -66,8 +91,19 @@
                 return (
                     <ul>
                         {
-                            this.props.todos.map((val,index)=>{
-                                return <li key={index}>{val}</li>
+                            this.props.todos.map((obj,index)=>{
+                                return (
+                                    <li 
+                                        className={obj.isActive?'red':''}
+                                        key={index}
+                                        onClick={()=>{
+                                            // 当前对象的isActive取非
+                                            this.props.changeColorFn(index)
+                                        }}
+                                    >
+                                        {obj.name}
+                                    </li>
+                                )
                             })
                         }
                     </ul>
