@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .a{
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    
+        class Hello extends React.Component {
+            constructor(){
+                super();
+                this.state = {
+                    arr:['a','b','c','d','e','f','g']
+                }
+            }
+            render() {
+                return (
+                    <ul>
+                        {
+                            // es6 map映射出一个新数组
+                            this.state.arr.map((val,index)=>{
+                                return <li key={index}>{val}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Hello></Hello>
+            , document.getElementById('root')
+        )
+
+
+    </script>
+</body>
+
+</html>

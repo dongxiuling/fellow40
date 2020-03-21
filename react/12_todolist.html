@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super()
+                this.state = {
+                    todos:['吃饭','睡觉','敲代码']
+                }
+                this.addFn = this.addFn.bind(this);
+            }
+            addFn(val){
+                // console.log(val)
+                this.setState({
+                    todos:[...this.state.todos,val]
+                })
+            }
+            render(){
+                return (
+                    <div>
+                        <h3>todolist</h3>
+                        <Search></Search>
+                        <Add addFn={this.addFn}></Add>
+                        <List todos={this.state.todos}></List>
+                    </div>
+                )
+            }
+        }
+        class Search extends React.Component{
+            render(){
+                return (
+                    <div>
+                        <label htmlFor="search">搜索：</label>
+                        <input id="search" type="text"/>
+                        <button>搜索</button>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            render(){
+                return (
+                    <div>
+                        <label htmlFor="addValue">添加：</label>
+                        <input id="addValue" ref={input => this.myInput = input} type="text"/>
+                        <button onClick={()=>{
+                            this.props.addFn(this.myInput.value);
+                            this.myInput.value = "";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class List extends React.Component{
+            render(){
+                return (
+                    <ul>
+                        {
+                            this.props.todos.map((val,index)=>{
+                                return <li key={index}>{val}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+        )
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        // const Hello = (props) =>{
+        //     return (
+        //         <div>
+        //             <h2>hello!{props.name} </h2>
+        //             {props.children}
+        //         </div>
+        //     )
+        // }
+        class Hello extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    num: 0
+                }
+                this.fn = this.fn.bind(this)
+            }
+            fn() {
+                this.setState({
+                    num: this.state.num + 1
+                })
+                // this.refs.
+            }
+            render() {
+                return (
+                    <div>
+                        {
+                            //    <input type="text" ref="username"/>
+                        }
+                        <input type="text" ref={input=>this.myInput = input} />
+                       
+                        <h3>helolo {this.props.name} ={this.state.num}</h3>
+                        <button onClick={this.fn}>click</button>
+                        <p>
+                            {this.props.children}
+                        </p>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Hello name="zhangsan">
+                <a href="#">ahgdhasgd</a>
+            </Hello>
+            , document.getElementById('root')
+        )
+
+
+    </script>
+</body>
+
+</html>

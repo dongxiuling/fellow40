@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .a{
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        // const Hello = (props) =>{
+        //     return (
+        //         <div>
+        //             <h2>hello!{props.name} </h2>
+        //             {props.children}
+        //         </div>
+        //     )
+        // }
+        class Hello extends React.Component {
+           
+            render() {
+                let style={
+                    background:'red',
+                    height:"300px"
+                }
+                return (
+                    <div>
+                        <h3 className='a' >jajajaj</h3>
+                        <h3 style={style} >jajajaj</h3>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Hello></Hello>
+            , document.getElementById('root')
+        )
+
+
+    </script>
+</body>
+
+</html>
