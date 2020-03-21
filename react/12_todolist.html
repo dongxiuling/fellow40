@@ -8,6 +8,12 @@
         .red{
             background: red;
         }
+        li{
+            display: none;
+        }
+        li.show{
+            display: block;
+        }
 
     </style>
 </head>
@@ -24,22 +30,27 @@
                     todos:[
                         {
                             name:'吃饭',
-                            isActive:false//标识是否被点击| 是否有红色背景 true|false
+                            isActive:false,//标识是否被点击| 是否有红色背景 true|false
+                            isInclude:true
                         },{
                             name:'睡觉',
-                            isActive:false
+                            isActive:false,
+                            isInclude:true
                         },{
                             name:'敲代码',
-                            isActive:false
+                            isActive:false,
+                            isInclude:true
                         }]
                 }
                 this.addFn = this.addFn.bind(this);
                 this.changeColorFn = this.changeColorFn.bind(this);
+                this.delFn = this.delFn.bind(this);
+                this.searchFn = this.searchFn.bind(this)
             }
             addFn(val){
                 // console.log(val)
                 this.setState({
-                    todos:[...this.state.todos,val]
+                    todos:[...this.state.todos,{name:val,isActive:false,isInclude:true}]
                 })
             }
             changeColorFn(index){
@@ -50,13 +61,37 @@
                     todos
                 })
             }
+            delFn(index){
+                // console.log(index)
+                let todos = [...this.state.todos];
+                todos.splice(index,1);
+                this.setState({
+                    todos
+                })
+            }
+            searchFn(val){
+                let todos = [...this.state.todos];
+                todos.forEach((obj,index)=>{
+                    if( obj.name.includes(val) ){
+                        obj.isInclude = true;
+                    }else{
+                        obj.isInclude = false;
+                    }
+                })
+                this.setState({
+                    todos
+                })
+            }
             render(){
                 return (
                     <div>
                         <h3>todolist</h3>
-                        <Search></Search>
+                        <Search searchFn={this.searchFn}></Search>
                         <Add addFn={this.addFn}></Add>
-                        <List todos={this.state.todos} changeColorFn={this.changeColorFn}></List>
+                        <List todos={this.state.todos} 
+                            changeColorFn={this.changeColorFn}
+                            delFn={this.delFn}
+                        ></List>
                     </div>
                 )
             }
@@ -66,8 +101,11 @@
                 return (
                     <div>
                         <label htmlFor="search">搜索：</label>
-                        <input id="search" type="text"/>
-                        <button>搜索</button>
+                        <input id="search" type="text" onChange={(e)=>{
+                            // 当文本框内容变化的时候  过滤出所有包含文本框内容 显示，不包含的隐藏
+                            this.props.searchFn(e.target.value);
+                            console.log('11')
+                        }}/>
                     </div>
                 )
             }
@@ -92,9 +130,12 @@
                     <ul>
                         {
                             this.props.todos.map((obj,index)=>{
+                                // red show
+                                let isActive = obj.isActive?'red':'';
+                                let isShow = obj.isInclude?'show':'';
                                 return (
                                     <li 
-                                        className={obj.isActive?'red':''}
+                                        className={isActive +" " +isShow}
                                         key={index}
                                         onClick={()=>{
                                             // 当前对象的isActive取非
@@ -102,6 +143,10 @@
                                         }}
                                     >
                                         {obj.name}
+                                        <button onClick={(e)=>{
+                                            this.props.delFn(index);
+                                            e.stopPropagation();
+                                        }}>del</button>
                                     </li>
                                 )
                             })
