@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super()
+                this.state = {
+                    msg:'hello~ '
+                }
+                console.log('main constructor')
+            }
+            componentWillMount(){
+                console.log("main componentWillMount")
+            }
+            componentDidMount(){
+                console.log("main componentDidMount")
+                this.timer = setInterval(() => {
+                    console.log(Math.random())
+                }, 1000);
+            }
+            shouldComponentUpdate(nprops,nstate){
+                console.log('main shouldComponnetUpdate',nprops,nstate);
+                return true;
+            }
+            componentWillUpdate(){
+                console.log('main componentWillUpdate',document.getElementsByTagName('h2')[0].innerHTML);
+            }
+            componentDidUpdate(){
+                console.log('main componentDidUpdate',document.getElementsByTagName('h2')[0].innerHTML);
+            }
+            componentWillUnmount(){
+                console.log('main componentWillUnmount');
+                clearInterval(this.timer)
+            }
+            render(){
+                console.log('main render')
+                return (
+                    <div>
+                        <Child msg={this.state.msg}></Child>
+                        <img src="../react生命周期.webp" alt=""/>
+                        <h2>main组件 {this.state.msg}</h2>
+                        <button onClick={
+                            ()=>{
+                                this.setState({
+                                    msg:'你好！'
+                                })
+                            }
+                        }>click</button>
+                        <button onClick={
+                            ()=>{
+                                ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+                            }
+                        }>卸载</button>
+                    </div>
+                )
+            }
+        }
+        class Child extends React.Component{
+            constructor(){
+                super()
+            }
+            componentWillReceiveProps(){
+                console.log('child componentWillReceiveProps')
+            }
+            shouldComponentUpdate(nprops,nstate){
+                console.log('child shouldComponnetUpdate',nprops,nstate);
+                return true;
+            }
+            componentWillUpdate(){
+                console.log('child componentWillUpdate',document.getElementsByTagName('h1')[0].innerHTML);
+            }
+            componentDidUpdate(){
+                console.log('child componentDidUpdate',document.getElementsByTagName('h1')[0].innerHTML);
+            }
+            render(){
+                console.log('child render')
+                return <h1>子组件 {this.props.msg}</h1>
+            }
+        }
+
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+
+        )
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
