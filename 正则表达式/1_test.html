@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var reg1 = /test/i;
+        // var str = 'test';
+        // var reg2 = new RegExp(str);
+
+        console.log( reg1.exec("adfhgasfdgTestjhcdjsgf"));
+
+
+        // var reg = /c{2}/;
+        // var str='cainiao';
+
+        // console.log(reg.exec(str))
+
+        // var reg = /\bc/;
+
+        // var str = "hgghgghghggc";
+        // console.log(reg.exec(str));
+
+        // (a)子表达式  \1反向引用第一个子表达式匹配到的结果
+        // var reg = /(a)(b)\1/;
+        // var str = "fdabagdgu";
+        // console.log(reg.exec(str));
+
+        var reg = /(\w)\w\1/;
+
+        var str = "dtryfufgihjok;";
+        console.log(reg.exec(str))
+
+
+    </script>
+    
+</body>
+</html>
